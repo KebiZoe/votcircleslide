@@ -1,0 +1,16 @@
+PODS:
+  - votcircleslide (0.1.0)
+
+DEPENDENCIES:
+  - votcircleslide (from `../`)
+
+EXTERNAL SOURCES:
+  votcircleslide:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  votcircleslide: e764c78bcfd488df94120c6be53284988adbf2d6
+
+PODFILE CHECKSUM: 165441a4787a68b6fafc9032e45eb3bc314c8466
+
+COCOAPODS: 1.11.3

@@ -1,0 +1,28 @@
+{
+  "name": "votcircleslide",
+  "version": "0.1.0",
+  "summary": "环形滑块.",
+  "description": "这是一个用于原地转向的环形滑块，可设置旋转角度，和已加载角度。左右可旋转0-180度",
+  "homepage": "http://10.54.147.91:5580/s.zengxiangxian/votcircleslide",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "s.zengxiangxian@byd.com": "s.zengxiangxian@byd.com"
+  },
+  "source": {
+    "git": "http://10.54.147.91:5580/s.zengxiangxian/votcircleslide.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.3"
+  },
+  "source_files": "votcircleslide/Classes/**/*",
+  "resource_bundles": {
+    "votcircleslide": [
+      "votcircleslide/Assets/*.png"
+    ]
+  },
+  "frameworks": "UIKit"
+}

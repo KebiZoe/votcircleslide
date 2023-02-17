@@ -38,7 +38,9 @@
 
 /* Begin PBXFileReference section */
 		23D319F540796D19DD21F336 /* Pods-votcircleslide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Tests.debug.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		497B96568471171ADF08F842 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3FC85DAB299F201100D9CB56 /* votcircleslide */ = {isa = PBXFileReference; lastKnownFileType = folder; name = votcircleslide; path = ../votcircleslide; sourceTree = "<group>"; };
+		3FC85DAD299F23FA00D9CB56 /* ZDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDefine.h; sourceTree = "<group>"; };
+		497B96568471171ADF08F842 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* votcircleslide_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = votcircleslide_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,11 +62,11 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73EDD066582E5B6A0C9C9D4E /* Pods_votcircleslide_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_votcircleslide_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78746752F0DB4855E3929BC9 /* votcircleslide.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = votcircleslide.podspec; path = ../votcircleslide.podspec; sourceTree = "<group>"; };
+		78746752F0DB4855E3929BC9 /* votcircleslide.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = votcircleslide.podspec; path = ../votcircleslide.podspec; sourceTree = "<group>"; };
 		78BCA84385B8BE72E2FC5E18 /* Pods-votcircleslide_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Example.release.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.release.xcconfig"; sourceTree = "<group>"; };
 		801C73CCDC4A4ABC834C3C1C /* Pods-votcircleslide_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Tests.release.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA715DC8B057584C9C6BA03E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AA715DC8B057584C9C6BA03E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DD50C4BA51D82309E7DD588A /* Pods_votcircleslide_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_votcircleslide_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBCDF242C4F6F84B9909EC0 /* Pods-votcircleslide_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Example.debug.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
+				3FC85DAB299F201100D9CB56 /* votcircleslide */,
 				6003F593195388D20070C39A /* Example for votcircleslide */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
@@ -140,6 +143,7 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				3FC85DAD299F23FA00D9CB56 /* ZDefine.h */,
 			);
 			name = "Example for votcircleslide";
 			path = votcircleslide;
@@ -193,7 +197,6 @@
 				23D319F540796D19DD21F336 /* Pods-votcircleslide_Tests.debug.xcconfig */,
 				801C73CCDC4A4ABC834C3C1C /* Pods-votcircleslide_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +261,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
