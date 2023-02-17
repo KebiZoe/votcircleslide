@@ -47,14 +47,6 @@
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
         _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake((kScreenWidth - 300) / 2.0, (kScreenHeight - 300) / 2.0, 300, 300)];
-        _circleSlider.setTrackTintColor = kUIColorFromRGB(0x1482f0);
-        _circleSlider.downTrackTintColor = kUIColorFromRGB(0xE62E2E);
-        _circleSlider.backgroundTintColor = [UIColor colorWithWhite:0 alpha:0.2];
-        _circleSlider.circleBorderWidth = 10.0f;
-        _circleSlider.thumbRadius = 16;
-        _circleSlider.circleRadius = 220 / 2.0 + 2;
-        _circleSlider.value = 0;
-        _circleSlider.loadProgress = 0;
         [_circleSlider addTarget:self
                           action:@selector(circleSliderTouchDown:)
                 forControlEvents:UIControlEventTouchDown];

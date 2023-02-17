@@ -67,11 +67,12 @@
     _thumbswipeRightImage = [UIImage imageWithContentsOfFile:path3];
     _thumbsGoalImage = [UIImage imageWithContentsOfFile:path4];
     
-    self.circleRadius = MIN(self.frame.size.width, self.frame.size.height) - 44;
+    self.circleRadius = MIN(self.frame.size.width, self.frame.size.height)/2 - 40;
     self.circleBorderWidth = 10.0f;
-    self.thumbRadius = 12.0f;
-    self.downTrackTintColor = [UIColor lightGrayColor];
-    self.setTrackTintColor = [UIColor blueColor];
+    self.thumbRadius = 24.0f;
+    self.downTrackTintColor = [UIColor colorWithRed:69/255.0 green:130/255.0 blue:230/255.0 alpha:255/255.0];
+    self.setTrackTintColor = [UIColor colorWithRed:0.30 green:0.33 blue:0.38 alpha:1.00];
+    self.backgroundTintColor = [UIColor colorWithRed:0.88 green:0.89 blue:0.90 alpha:1.00];
     
     self.drawCenter = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
     
@@ -83,6 +84,7 @@
     self.degreeImgV.image = [self drawLineOfDashByImageView:self.degreeImgV];
     [self addSubview:self.degreeImgV];
     
+    self.thumbView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.thumbView];
     [self addSubview:self.showDegreeLbl];
     [self addObserver:self forKeyPath:@"userInteractionEnabled" options:NSKeyValueObservingOptionNew context:nil];
@@ -249,20 +251,51 @@
     UIGraphicsBeginImageContext(imageView.frame.size);
 
     [imageView.image drawInRect:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
-
+    // 虚线刻度半径
+    CGFloat degreeRadius = imageView.frame.size.width/2-31;
+    UIColor *degreeColor =  [UIColor colorWithRed:133/255.0 green:174/255.0 blue:255/255.0 alpha:255/255.0];
     // 获取上下文
     CGContextRef line = UIGraphicsGetCurrentContext();
+    // 绘制三角形
+    CGFloat dx = imageView.center.x - degreeRadius*sin(M_PI_4*8/9);
+    CGFloat d2x = imageView.center.x + degreeRadius*sin(M_PI_4*8/9);
+    CGFloat dy = imageView.center.y - degreeRadius*cos(M_PI_4*8/9);
+    CGFloat ddx = imageView.center.x - degreeRadius*sin(M_PI_4*7/9);
+    CGFloat dd2x = imageView.center.x + degreeRadius*sin(M_PI_4*7/9);
+    CGFloat ddy = imageView.center.y - degreeRadius*cos(M_PI_4*7/9);
+    CGContextSetFillColorWithColor(line, degreeColor.CGColor);
+    // 绘制左边
+    CGContextMoveToPoint(line, dx, dy);
+    // 设置第二个点
+    CGContextAddLineToPoint(line, ddx, ddy);
+    // 设置第三个点
+    CGContextAddLineToPoint(line, (ddx+dx)/2, ddy-6);
+    // 关闭起点和终点
+    CGContextClosePath(line);
+    // 3.渲染图形到layer上
+    CGContextFillPath(line);
+    // 绘制右边边
+    CGContextMoveToPoint(line, d2x, dy);
+    // 设置第二个点
+    CGContextAddLineToPoint(line, dd2x, ddy);
+    // 设置第三个点
+    CGContextAddLineToPoint(line, (dd2x+d2x)/2, ddy-6);
+    // 关闭起点和终点
+    CGContextClosePath(line);
+    // 3.渲染图形到layer上
+    CGContextFillPath(line);
+    
     // 开始绘制虚线
     // 设置虚线的长度 和 间距
     CGFloat lengths[] = {5,5};
     CGContextSetLineDash(line, 0, lengths, 2);
-    CGContextSetStrokeColorWithColor(line, [UIColor greenColor].CGColor);
+    CGContextSetStrokeColorWithColor(line, degreeColor.CGColor);
     
     UIBezierPath *loadPath = [UIBezierPath bezierPath];
     CGFloat start = -M_PI_2-M_PI_4*8/9;
     CGFloat end = -M_PI_2+M_PI_4*8/9;
     [loadPath addArcWithCenter:self.drawCenter
-                        radius:imageView.frame.size.width/2-30
+                        radius:degreeRadius
                     startAngle:start
                       endAngle:end
                      clockwise:YES];
@@ -275,7 +308,7 @@
         UIBezierPath *circlePath = [UIBezierPath bezierPath];
         CGFloat originstart = -M_PI_2+M_PI_4+M_PI_4*i/9;
         [circlePath addArcWithCenter:self.drawCenter
-                              radius:imageView.frame.size.width/2-30
+                              radius:degreeRadius
                           startAngle:originstart
                             endAngle:originstart+0.005
                            clockwise:YES];
