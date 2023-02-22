@@ -274,7 +274,7 @@
     
     double LL = self.circleRadius + kAutoSize(35);
     double xL = LL * sin(alpha) + self.drawCenter.x;
-    double yL = -LL * cos(alpha) + self.drawCenter.y;
+    double yL = -(LL-kAutoSize(10)) * cos(alpha) + self.drawCenter.y;
     self.showDegreeLbl.text = [NSString stringWithFormat:@"%.0f°",ABS(self.value*360)];
     [self.showDegreeLbl sizeToFit];
     CGSize size = self.showDegreeLbl.frame.size;
@@ -318,12 +318,12 @@
     }
     
     NSString *d0=@"0°";
-    [d0 drawAtPoint:CGPointMake(imageView.frame.size.width/2-6, 8) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d0 drawAtPoint:CGPointMake(imageView.frame.size.width/2-6, self.drawCenter.y-degreeRadius-kAutoSize(30)) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     
     NSString *d1=@"90°";
     [d1 drawAtPoint:CGPointMake(imageView.frame.size.width-26, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     NSString *d2=@"180°";
-    [d2 drawAtPoint:CGPointMake(imageView.frame.size.width/2-15, imageView.frame.size.height-26) withAttributes:@{NSForegroundColorAttributeName:   [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d2 drawAtPoint:CGPointMake(imageView.frame.size.width/2-15, self.drawCenter.y+degreeRadius+kAutoSize(10)) withAttributes:@{NSForegroundColorAttributeName:   [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     NSString *d3=@"90°";
     [d3 drawAtPoint:CGPointMake(0, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     return UIGraphicsGetImageFromCurrentImageContext();
