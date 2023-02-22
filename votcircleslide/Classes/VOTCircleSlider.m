@@ -16,18 +16,26 @@
     UIImage* _thumbswipeRightImage;   // 滑块右滑图片
     UIImage* _thumbsGoalImage;   // 滑块定位图片
 }
+/// 左右拖拽提示图片
 @property(nonatomic, strong) UIImageView *arrowimgV;
+/// 刻度图片
 @property (nonatomic, strong) UIImageView *degreeImgV;
+/// 滑块图片
 @property (nonatomic, strong) UIImageView *thumbView;
+/// 实车图片
 @property(nonatomic, strong) UIImageView *carImgV;
+/// 目标角度车图片
 @property(nonatomic, strong) UIImageView *virtualCarImgV;
+/// 当前滑块选择的度数
 @property (nonatomic, strong) UILabel *showDegreeLbl;
-@property (nonatomic, assign) CGPoint lastPoint;        //滑块的实时位置
-
-@property (nonatomic, assign) CGPoint drawCenter;       //绘制圆的圆心
-@property (nonatomic, assign) CGPoint circleStartPoint; //thumb起始位置
-@property (nonatomic, assign) CGFloat angle;            //转过的角度
-
+/// 滑块的实时位置
+@property (nonatomic, assign) CGPoint lastPoint;
+/// 绘制圆的圆心
+@property (nonatomic, assign) CGPoint drawCenter;
+/// thumb起始位置
+@property (nonatomic, assign) CGPoint circleStartPoint;
+/// 滑块转过的角度
+@property (nonatomic, assign) CGFloat angle;
 
 @end
 
@@ -58,19 +66,12 @@
  */
 - (void)setup {
     self.backgroundColor = [UIColor clearColor];
-    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-    NSString *directory = @"votcircleslide.bundle";
-    NSString *path0 = [currentBundle pathForResource:@"ic_vot_thumb_default@3x.png" ofType:nil inDirectory:directory];
-    NSString *path1 = [currentBundle pathForResource:@"ic_vot_thumb_180D@3x.png" ofType:nil inDirectory:directory];
-    NSString *path2 = [currentBundle pathForResource:@"ic_vot_thumb_swipeLeft@3x.png" ofType:nil inDirectory:directory];
-    NSString *path3 = [currentBundle pathForResource:@"ic_vot_thumb_swipeRight@3x.png" ofType:nil inDirectory:directory];
-    NSString *path4 = [currentBundle pathForResource:@"ic_vot_thumb_goal@3x.png" ofType:nil inDirectory:directory];
     
-    _thumbDefaultImage = [UIImage imageWithContentsOfFile:path0];
-    _thumb180DImage = [UIImage imageWithContentsOfFile:path1];
-    _thumbswipeLeftImage = [UIImage imageWithContentsOfFile:path2];
-    _thumbswipeRightImage = [UIImage imageWithContentsOfFile:path3];
-    _thumbsGoalImage = [UIImage imageWithContentsOfFile:path4];
+    _thumbDefaultImage = UIImageLoadWithName(@"ic_vot_thumb_default");
+    _thumb180DImage = UIImageLoadWithName(@"ic_vot_thumb_180D");
+    _thumbswipeLeftImage = UIImageLoadWithName(@"ic_vot_thumb_swipeLeft");
+    _thumbswipeRightImage = UIImageLoadWithName(@"ic_vot_thumb_swipeRight");
+    _thumbsGoalImage = UIImageLoadWithName(@"ic_vot_thumb_goal");
     
     self.circleRadius = MIN(self.frame.size.width, self.frame.size.height)/2 - kAutoSize(48);
     self.circleBorderWidth = kAutoSize(10);
@@ -90,17 +91,17 @@
     [self addSubview:self.degreeImgV];
     
     self.arrowimgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2-kAutoSize(191)/2, self.frame.size.height/2-self.circleRadius-kAutoSize(10), kAutoSize(191), kAutoSize(43))];
-    self.arrowimgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_arrow@3x.png" ofType:nil inDirectory:directory]];
+    self.arrowimgV.image = UIImageLoadWithName(@"ic_vot_arrow");
     self.arrowimgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.arrowimgV];
     
     self.virtualCarImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(81)/2, self.drawCenter.y-kAutoSize(183)/2, kAutoSize(81), kAutoSize(183))];
-    self.virtualCarImgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_virtualcar@3x.png" ofType:nil inDirectory:directory]];
+    self.virtualCarImgV.image = UIImageLoadWithName(@"ic_vot_virtualcar");
     self.virtualCarImgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.virtualCarImgV];
     
     self.carImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(113)/2, self.drawCenter.y-kAutoSize(215)/2, kAutoSize(113), kAutoSize(215))];
-    self.carImgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_car@3x.png" ofType:nil inDirectory:directory]];
+    self.carImgV.image = UIImageLoadWithName(@"ic_vot_car");
     self.carImgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.carImgV];
     
@@ -169,8 +170,6 @@
     _thumbRadius = thumbRadius;
     self.thumbView.frame = CGRectMake(0, 0, thumbRadius * 2, thumbRadius * 2);
     self.thumbView.layer.cornerRadius = thumbRadius;
-
-    [self setNeedsDisplay];
 }
 
 - (void)setCircleRadius:(CGFloat)circleRadius {
@@ -348,11 +347,11 @@
     CGPoint starTouchPoint = [touch locationInView:self];
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
-    //如果点击点和圆心的距离大于60，不做操作。
-    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
-    if (fabs(dist - self.circleRadius) > kAutoSize(60)) {
-        return NO;
-    }
+//    //如果点击点和圆心的距离大于60，不做操作。
+//    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
+//    if (fabs(dist - self.circleRadius) > kAutoSize(60)) {
+//        return NO;
+//    }
     return YES;
 }
 
@@ -448,5 +447,15 @@
     double x = fabs(pointA.x - pointB.x);
     double y = fabs(pointA.y - pointB.y);
     return hypot(x, y);//hypot(x, y)函数为计算三角形的斜边长度
+}
+
+/// 图片加载
+/// @param name 本地图片名字 eg: UIImageLoadWithName()
+/// @return 图片
+UIImage* UIImageLoadWithName(NSString *name){
+    NSString *directory = @"votcircleslide.bundle";
+    NSBundle *currentBundle = [NSBundle bundleForClass:[VOTCircleSlider class]];
+    UIImage* img = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:[NSString stringWithFormat:@"%@@3x.png",name] ofType:nil inDirectory:directory]];
+    return img;
 }
 @end

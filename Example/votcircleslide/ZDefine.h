@@ -9,9 +9,6 @@
 #ifndef ZDefine_h
 #define ZDefine_h
 
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
 //十六进制色值
 #define kUIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \

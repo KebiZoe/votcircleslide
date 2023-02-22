@@ -82,8 +82,8 @@
     if (!_progressSlider) {
         _progressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - 60, kScreenWidth - 80 - 20, 30)];
         _progressSlider.backgroundColor = [UIColor clearColor];
-        _progressSlider.minimumValue = 0;
-        _progressSlider.maximumValue = 1;
+        _progressSlider.minimumValue = -0.5;
+        _progressSlider.maximumValue = 0.5;
         _progressSlider.value = 0;
         _progressSlider.tag = 100;
         [_progressSlider addTarget:self
@@ -153,8 +153,8 @@
  */
 
 - (void)circleSliderTouchDown:(VOTCircleSlider *)slider {
-    
-    
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
+    self.progressSlider.value = slider.value;
 }
 
 - (void)circleSliderValueChanging:(VOTCircleSlider *)slider {
@@ -164,8 +164,9 @@
 }
 
 - (void)circleSliderValueDidChanged:(VOTCircleSlider *)slider {
-    
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
     self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f",slider.value * 360];
+    self.progressSlider.value = slider.value;
 }
 
 - (void)progressSliderValueChanging:(UISlider *)slider {

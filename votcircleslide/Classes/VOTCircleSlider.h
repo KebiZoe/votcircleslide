@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#ifndef kAutoSize
+#ifndef kScreenWidth
 /// 屏幕宽度
 #define kScreenWidth UIScreen.mainScreen.bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#endif
+#ifndef kAutoSize
 ///ui给的效果图是以375屏幕宽度为标准给的
 #define kUIStandardScreenWidth 375.0
 #define kAutoSize(size)  size * (kScreenWidth / kUIStandardScreenWidth)
