@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    NSLog(@"hello world");
     [self.view addSubview:self.circleSlider];
     [self.view addSubview:self.currentValueLabel];
     [self.view addSubview:self.finalValueLabel];
