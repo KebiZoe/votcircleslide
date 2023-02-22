@@ -16,21 +16,25 @@
     UIImage* _thumbswipeRightImage;   // 滑块右滑图片
     UIImage* _thumbsGoalImage;   // 滑块定位图片
 }
+@property(nonatomic, strong) UIImageView *arrowimgV;
 @property (nonatomic, strong) UIImageView *degreeImgV;
 @property (nonatomic, strong) UIImageView *thumbView;
+@property(nonatomic, strong) UIImageView *carImgV;
+@property(nonatomic, strong) UIImageView *virtualCarImgV;
 @property (nonatomic, strong) UILabel *showDegreeLbl;
 @property (nonatomic, assign) CGPoint lastPoint;        //滑块的实时位置
 
-@property (nonatomic, assign) CGFloat radius;           //半径
 @property (nonatomic, assign) CGPoint drawCenter;       //绘制圆的圆心
 @property (nonatomic, assign) CGPoint circleStartPoint; //thumb起始位置
 @property (nonatomic, assign) CGFloat angle;            //转过的角度
+
 
 @end
 
 @implementation VOTCircleSlider
 
 - (void)dealloc{
+    
     [self removeObserver:self forKeyPath:@"userInteractionEnabled"];
 }
 - (instancetype)init {
@@ -55,11 +59,12 @@
 - (void)setup {
     self.backgroundColor = [UIColor clearColor];
     NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-    NSString *path0 = [currentBundle pathForResource:@"ic_vot_thumb_default@3x.png" ofType:nil inDirectory:@"votcircleslide.bundle"];
-    NSString *path1 = [currentBundle pathForResource:@"ic_vot_thumb_180D@3x.png" ofType:nil inDirectory:@"votcircleslide.bundle"];
-    NSString *path2 = [currentBundle pathForResource:@"ic_vot_thumb_swipeLeft@3x.png" ofType:nil inDirectory:@"votcircleslide.bundle"];
-    NSString *path3 = [currentBundle pathForResource:@"ic_vot_thumb_swipeRight@3x.png" ofType:nil inDirectory:@"votcircleslide.bundle"];
-    NSString *path4 = [currentBundle pathForResource:@"ic_vot_thumb_goal@3x.png" ofType:nil inDirectory:@"votcircleslide.bundle"];
+    NSString *directory = @"votcircleslide.bundle";
+    NSString *path0 = [currentBundle pathForResource:@"ic_vot_thumb_default@3x.png" ofType:nil inDirectory:directory];
+    NSString *path1 = [currentBundle pathForResource:@"ic_vot_thumb_180D@3x.png" ofType:nil inDirectory:directory];
+    NSString *path2 = [currentBundle pathForResource:@"ic_vot_thumb_swipeLeft@3x.png" ofType:nil inDirectory:directory];
+    NSString *path3 = [currentBundle pathForResource:@"ic_vot_thumb_swipeRight@3x.png" ofType:nil inDirectory:directory];
+    NSString *path4 = [currentBundle pathForResource:@"ic_vot_thumb_goal@3x.png" ofType:nil inDirectory:directory];
     
     _thumbDefaultImage = [UIImage imageWithContentsOfFile:path0];
     _thumb180DImage = [UIImage imageWithContentsOfFile:path1];
@@ -67,9 +72,9 @@
     _thumbswipeRightImage = [UIImage imageWithContentsOfFile:path3];
     _thumbsGoalImage = [UIImage imageWithContentsOfFile:path4];
     
-    self.circleRadius = MIN(self.frame.size.width, self.frame.size.height)/2 - 40;
-    self.circleBorderWidth = 10.0f;
-    self.thumbRadius = 24.0f;
+    self.circleRadius = MIN(self.frame.size.width, self.frame.size.height)/2 - kAutoSize(48);
+    self.circleBorderWidth = kAutoSize(10);
+    self.thumbRadius = kAutoSize(15);
     self.downTrackTintColor = [UIColor colorWithRed:69/255.0 green:130/255.0 blue:230/255.0 alpha:255/255.0];
     self.setTrackTintColor = [UIColor colorWithRed:0.30 green:0.33 blue:0.38 alpha:1.00];
     self.backgroundTintColor = [UIColor colorWithRed:0.88 green:0.89 blue:0.90 alpha:1.00];
@@ -84,6 +89,21 @@
     self.degreeImgV.image = [self drawLineOfDashByImageView:self.degreeImgV];
     [self addSubview:self.degreeImgV];
     
+    self.arrowimgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2-kAutoSize(191)/2, self.frame.size.height/2-self.circleRadius-kAutoSize(10), kAutoSize(191), kAutoSize(43))];
+    self.arrowimgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_arrow@3x.png" ofType:nil inDirectory:directory]];
+    self.arrowimgV.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:self.arrowimgV];
+    
+    self.virtualCarImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(81)/2, self.drawCenter.y-kAutoSize(183)/2, kAutoSize(81), kAutoSize(183))];
+    self.virtualCarImgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_virtualcar@3x.png" ofType:nil inDirectory:directory]];
+    self.virtualCarImgV.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:self.virtualCarImgV];
+    
+    self.carImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(113)/2, self.drawCenter.y-kAutoSize(215)/2, kAutoSize(113), kAutoSize(215))];
+    self.carImgV.image = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:@"ic_vot_car@3x.png" ofType:nil inDirectory:directory]];
+    self.carImgV.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:self.carImgV];
+    
     self.thumbView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.thumbView];
     [self addSubview:self.showDegreeLbl];
@@ -91,8 +111,8 @@
 }
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    BOOL interaction = [change valueForKey:@"new"];
-    if (interaction == NO) {
+    int interaction = [[change valueForKey:@"new"] intValue];
+    if (interaction == 0) {
         self.thumbView.image = _thumbsGoalImage;
     }else{
         if(self.angle<0){
@@ -141,7 +161,7 @@
 }
 
 - (void)setLoadProgress:(float)loadProgress {
-    _loadProgress = loadProgress;
+    _loadProgress = ABS(loadProgress);
     [self setNeedsDisplay];
 }
 
@@ -178,7 +198,6 @@
 
 - (void)drawRect:(CGRect)rect {
     self.drawCenter = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
-    self.radius = self.circleRadius;
     self.circleStartPoint = CGPointMake(self.drawCenter.x, self.drawCenter.y - self.circleRadius);
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -186,7 +205,7 @@
     //圆形的背景颜色
     CGContextSetStrokeColorWithColor(ctx, self.backgroundTintColor.CGColor);
     CGContextSetLineWidth(ctx, self.circleBorderWidth);
-    CGContextAddArc(ctx, self.drawCenter.x, self.drawCenter.y, self.radius, 0, 2 * M_PI, 0);
+    CGContextAddArc(ctx, self.drawCenter.x, self.drawCenter.y, self.circleRadius, 0, 2 * M_PI, 0);
     CGContextDrawPath(ctx, kCGPathStroke);
     
     //value
@@ -198,7 +217,7 @@
         currentOrigin = -M_PI_2;
     }
     [circlePath addArcWithCenter:self.drawCenter
-                          radius:self.radius
+                          radius:self.circleRadius
                       startAngle:originstart
                         endAngle:currentOrigin
                        clockwise:YES];
@@ -213,13 +232,14 @@
     //加载的进度
     UIBezierPath *loadPath = [UIBezierPath bezierPath];
     CGFloat loadStart = -M_PI_2;
-    CGFloat loadCurre = loadStart + 2 * M_PI * self.loadProgress;
+    CGFloat loadpg = self.loadProgress * _value * 2 * M_PI;
+    CGFloat loadCurre = loadStart + loadpg;
     if (_value<0){
-        loadStart = -M_PI_2 - 2 * M_PI * self.loadProgress;
+        loadStart = -M_PI_2 + loadpg;
         loadCurre = -M_PI_2;
     }
     [loadPath addArcWithCenter:self.drawCenter
-                        radius:self.radius
+                        radius:self.circleRadius
                     startAngle:loadStart
                       endAngle:loadCurre
                      clockwise:YES];
@@ -230,8 +250,6 @@
     CGContextAddPath(ctx, loadPath.CGPath);
     CGContextDrawPath(ctx, kCGPathStroke);
     CGContextRestoreGState(ctx);
-    // 关闭图像
-    CGContextClosePath(ctx);
     /*
      * 计算移动点的位置
      * alpha = 移动点相对于起始点顺时针扫过的角度(弧度)
@@ -239,12 +257,27 @@
      * y 可以通过-r * cos(alpha) + 圆心的y坐标来计算。
      */
     double alpha = self.value * 2 * M_PI;
-    double x = self.radius * sin(alpha) + self.drawCenter.x;
-    double y = -self.radius * cos(alpha) + self.drawCenter.y;
+    double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
+    double y = -self.circleRadius * cos(alpha) + self.drawCenter.y;
     self.lastPoint = CGPointMake(x, y);
     self.thumbView.center = self.lastPoint;
     self.thumbView.transform = CGAffineTransformIdentity;
     self.thumbView.transform = CGAffineTransformMakeRotation(self.value*M_PI*2);
+    self.virtualCarImgV.transform = CGAffineTransformIdentity;
+    self.virtualCarImgV.transform = CGAffineTransformMakeRotation(self.value*M_PI*2);
+    
+    self.carImgV.transform = CGAffineTransformIdentity;
+    self.carImgV.transform = CGAffineTransformMakeRotation(loadpg);
+    
+    double LL = self.circleRadius + kAutoSize(35);
+    double xL = LL * sin(alpha) + self.drawCenter.x;
+    double yL = -LL * cos(alpha) + self.drawCenter.y;
+    self.showDegreeLbl.text = [NSString stringWithFormat:@"%.0f°",ABS(self.value*360)];
+    [self.showDegreeLbl sizeToFit];
+    CGSize size = self.showDegreeLbl.frame.size;
+    self.showDegreeLbl.frame = CGRectMake(self.showDegreeLbl.frame.origin.x, self.showDegreeLbl.frame.origin.y, size.width+10, size.height);
+    
+    self.showDegreeLbl.center = CGPointMake(xL, yL);
 }
 - (UIImage *)drawLineOfDashByImageView:(UIImageView *)imageView {
     // 开始划线 划线的frame
@@ -252,70 +285,27 @@
 
     [imageView.image drawInRect:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
     // 虚线刻度半径
-    CGFloat degreeRadius = imageView.frame.size.width/2-31;
-    UIColor *degreeColor =  [UIColor colorWithRed:133/255.0 green:174/255.0 blue:255/255.0 alpha:255/255.0];
+    CGFloat degreeRadius = imageView.frame.size.width/2-kAutoSize(38);
     // 获取上下文
     CGContextRef line = UIGraphicsGetCurrentContext();
-    // 绘制三角形
-    CGFloat dx = imageView.center.x - degreeRadius*sin(M_PI_4*8/9);
-    CGFloat d2x = imageView.center.x + degreeRadius*sin(M_PI_4*8/9);
-    CGFloat dy = imageView.center.y - degreeRadius*cos(M_PI_4*8/9);
-    CGFloat ddx = imageView.center.x - degreeRadius*sin(M_PI_4*7/9);
-    CGFloat dd2x = imageView.center.x + degreeRadius*sin(M_PI_4*7/9);
-    CGFloat ddy = imageView.center.y - degreeRadius*cos(M_PI_4*7/9);
-    CGContextSetFillColorWithColor(line, degreeColor.CGColor);
-    // 绘制左边
-    CGContextMoveToPoint(line, dx, dy);
-    // 设置第二个点
-    CGContextAddLineToPoint(line, ddx, ddy);
-    // 设置第三个点
-    CGContextAddLineToPoint(line, (ddx+dx)/2, ddy-6);
-    // 关闭起点和终点
-    CGContextClosePath(line);
-    // 3.渲染图形到layer上
-    CGContextFillPath(line);
-    // 绘制右边边
-    CGContextMoveToPoint(line, d2x, dy);
-    // 设置第二个点
-    CGContextAddLineToPoint(line, dd2x, ddy);
-    // 设置第三个点
-    CGContextAddLineToPoint(line, (dd2x+d2x)/2, ddy-6);
-    // 关闭起点和终点
-    CGContextClosePath(line);
-    // 3.渲染图形到layer上
-    CGContextFillPath(line);
-    
-    // 开始绘制虚线
-    // 设置虚线的长度 和 间距
-    CGFloat lengths[] = {5,5};
-    CGContextSetLineDash(line, 0, lengths, 2);
-    CGContextSetStrokeColorWithColor(line, degreeColor.CGColor);
-    
-    UIBezierPath *loadPath = [UIBezierPath bezierPath];
-    CGFloat start = -M_PI_2-M_PI_4*8/9;
-    CGFloat end = -M_PI_2+M_PI_4*8/9;
-    [loadPath addArcWithCenter:self.drawCenter
-                        radius:degreeRadius
-                    startAngle:start
-                      endAngle:end
-                     clockwise:YES];
-    
-    CGContextAddPath(line, loadPath.CGPath);
-    CGContextDrawPath(line, kCGPathStroke);
-    
-    
     for (int i=0; i<55; i++) {
         UIBezierPath *circlePath = [UIBezierPath bezierPath];
         CGFloat originstart = -M_PI_2+M_PI_4+M_PI_4*i/9;
-        [circlePath addArcWithCenter:self.drawCenter
-                              radius:degreeRadius
-                          startAngle:originstart
-                            endAngle:originstart+0.005
-                           clockwise:YES];
-        CGContextSaveGState(line);
         if ((i%9)==0){
-            CGContextSetLineWidth(line, 8);
+            [circlePath addArcWithCenter:self.drawCenter
+                                  radius:degreeRadius
+                              startAngle:originstart
+                                endAngle:originstart+0.005
+                               clockwise:YES];
+            CGContextSaveGState(line);
+            CGContextSetLineWidth(line, 10);
         }else{
+            [circlePath addArcWithCenter:self.drawCenter
+                                  radius:degreeRadius-3
+                              startAngle:originstart
+                                endAngle:originstart+0.005
+                               clockwise:YES];
+            CGContextSaveGState(line);
             CGContextSetLineWidth(line, 4);
         }
         
@@ -325,14 +315,14 @@
     }
     
     NSString *d0=@"0°";
-    [d0 drawAtPoint:CGPointMake(imageView.frame.size.width/2-6, 8) withAttributes:@{NSForegroundColorAttributeName: UIColor.grayColor,NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d0 drawAtPoint:CGPointMake(imageView.frame.size.width/2-6, 8) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     
     NSString *d1=@"90°";
-    [d1 drawAtPoint:CGPointMake(imageView.frame.size.width-26, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName: UIColor.grayColor,NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d1 drawAtPoint:CGPointMake(imageView.frame.size.width-26, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     NSString *d2=@"180°";
-    [d2 drawAtPoint:CGPointMake(imageView.frame.size.width/2-15, imageView.frame.size.height-26) withAttributes:@{NSForegroundColorAttributeName: UIColor.grayColor,NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d2 drawAtPoint:CGPointMake(imageView.frame.size.width/2-15, imageView.frame.size.height-26) withAttributes:@{NSForegroundColorAttributeName:   [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     NSString *d3=@"90°";
-    [d3 drawAtPoint:CGPointMake(0, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName: UIColor.grayColor,NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+    [d3 drawAtPoint:CGPointMake(0, imageView.frame.size.height/2-10) withAttributes:@{NSForegroundColorAttributeName:  [UIColor colorWithRed:21/255.0 green:22/255.0 blue:26/255.0 alpha:255/255.0],NSFontAttributeName: [UIFont systemFontOfSize:16]}];
     return UIGraphicsGetImageFromCurrentImageContext();
 }
 #pragma mark - UIControl methods
@@ -344,21 +334,11 @@
 
     //如果点击点和上一次点击点的距离大于20，不做操作。
     double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
-    if (touchDist > 20) {
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
-        return YES;
-    }
-    //如果点击点和圆心的距离大于20，不做操作。
-    //以上两步是用来限定滑块的点击范围，距离滑块太远不操作，距离圆心太远或太近不操作
-    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
-    if (fabs(dist - self.radius) > 20) {
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
-        return YES;
-    }
-    self.thumbView.center = self.lastPoint;
-    
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
+    if (touchDist > 20) {
+        return NO;
+    }
     return YES;
 }
 
@@ -366,29 +346,22 @@
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [super continueTrackingWithTouch:touch withEvent:event];
     CGPoint starTouchPoint = [touch locationInView:self];
-    
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
+    //如果点击点和圆心的距离大于60，不做操作。
+    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
+    if (fabs(dist - self.circleRadius) > kAutoSize(60)) {
+        return NO;
+    }
     return YES;
 }
 
 //拖动结束
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [super endTrackingWithTouch:touch withEvent:event];
-     self.thumbView.center = self.lastPoint;
     
     CGPoint starTouchPoint = [touch locationInView:self];
     
-    double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
-    if (touchDist > 20) {
-        [self sendActionsForControlEvents:UIControlEventEditingDidEnd];
-        return;
-    }
-    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
-    if (fabs(dist - self.radius) > 20) {
-        [self sendActionsForControlEvents:UIControlEventEditingDidEnd];
-        return;
-    }
     [self moveHandlerWithPoint:starTouchPoint];
     
     [self sendActionsForControlEvents:UIControlEventEditingDidEnd];
@@ -411,32 +384,17 @@
      * yT 算法同上
      */
     double sinAlpha = (moveX - centerX) / dist;
-    double xT = self.radius * sinAlpha + centerX;
-    double yT = sqrt((self.radius * self.radius - (xT - centerX) * (xT - centerX))) + centerY;
+    double xT = self.circleRadius * sinAlpha + centerX;
+    double yT = sqrt((self.circleRadius * self.circleRadius - (xT - centerX) * (xT - centerX))) + centerY;
     if (moveY < centerY) {
         yT = centerY - fabs(yT - centerY);
     }
-    double LL = self.radius + 35;
-    double xL = LL * sinAlpha + centerX;
-    double yL = sqrt((LL * LL - (xL - centerX) * (xL - centerX))) + centerY;
-    if (moveY < centerY) {
-        yL = centerY - fabs(yL - centerY);
-    }
+    self.lastPoint = CGPointMake(xT, yT);
     
-    self.lastPoint = self.thumbView.center = CGPointMake(xT, yT);
-    
-    
-    CGFloat angle = [VOTCircleSlider calculateAngleWithRadius:self.radius
+    CGFloat angle = [VOTCircleSlider calculateAngleWithRadius:self.circleRadius
                                                      center:self.drawCenter
                                                 startCenter:self.circleStartPoint
                                                   endCenter:self.lastPoint];
-    
-    self.showDegreeLbl.text = [NSString stringWithFormat:@"%.0f°",angle<0?-angle:angle];
-    [self.showDegreeLbl sizeToFit];
-    CGSize size = self.showDegreeLbl.frame.size;
-    self.showDegreeLbl.frame = CGRectMake(self.showDegreeLbl.frame.origin.x, self.showDegreeLbl.frame.origin.y, size.width+10, size.height);
-    
-    self.showDegreeLbl.center = CGPointMake(xL, yL);
     self.angle = angle;
     
     if(self.angle<-179.5){

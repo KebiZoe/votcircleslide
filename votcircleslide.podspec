@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://10.54.147.91:5580/s.zengxiangxian/votcircleslide'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 's.zengxiangxian' => 's.zengxiangxian@byd.com' }
-  s.source           = { :git => 'ssh://git@10.54.147.91:5522/s.zengxiangxian/votcircleslide.git', :tag => s.version.to_s }
+  s.source           = { :git => 'http://10.54.147.91:5580/s.zengxiangxian/votcircleslide.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.3'
 

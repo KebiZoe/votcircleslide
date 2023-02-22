@@ -1,8 +1,8 @@
-cource 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
-cource 'ssh://git@10.54.147.91:5522/root/ios_podspecs.git'
+#cource 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#cource 'ssh://git@10.54.147.91:5522/root/ios_podspecs.git'
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '9.3'
 
 target 'votcircleslide_Example' do
   pod 'votcircleslide', :path => '../'

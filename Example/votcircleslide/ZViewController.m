@@ -46,7 +46,7 @@
 
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
-        _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake((kScreenWidth - 300) / 2.0, (kScreenHeight - 300) / 2.0, 300, 300)];
+        _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - 300) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
         [_circleSlider addTarget:self
                           action:@selector(circleSliderTouchDown:)
                 forControlEvents:UIControlEventTouchDown];
@@ -62,7 +62,7 @@
 
 - (UILabel *)currentValueLabel {
     if (!_currentValueLabel) {
-        _currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 100) / 2.0, (kScreenHeight - 30) / 2.0 - 30, 100, 30)];
+        _currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, 100, 200, 30)];
         _currentValueLabel.textAlignment = NSTextAlignmentCenter;
         _currentValueLabel.text = @"当前值：0";
     }
@@ -71,7 +71,7 @@
 
 - (UILabel *)finalValueLabel {
     if (!_finalValueLabel) {
-        _finalValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 100) / 2.0, (kScreenHeight - 30) / 2.0, 100, 30)];
+        _finalValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, 140, 200, 30)];
         _finalValueLabel.textAlignment = NSTextAlignmentCenter;
         _finalValueLabel.text = @"最终值：0";
     }
@@ -100,7 +100,7 @@
 
 - (UILabel *)progressValueLabel {
     if (!_progressValueLabel) {
-        _progressValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 130) / 2.0, (kScreenHeight - 30) / 2.0 + 30, 130, 30)];
+        _progressValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 230) / 2.0, 180, 230, 30)];
         _progressValueLabel.textAlignment = NSTextAlignmentCenter;
         _progressValueLabel.text = @"加载进度：0";
     }

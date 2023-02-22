@@ -7,42 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02BE34CD45F150E545D16DA0E861D91B /* ic_vot_car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */; };
+		030F985278E87023A88FA42E87F2F9F9 /* ic_vot_thumb_swipeLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */; };
+		09C852080476B92F8ACDB2A2DBB12E69 /* ic_vot_thumb_goal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */; };
 		11DC6B00338D27B5ED4D53D46DBA07B5 /* Pods-votcircleslide_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A94AABE811C0D55CB1234835A33D7AA /* Pods-votcircleslide_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E21B0E717E6C47529D69A9503DBBF1A /* votcircleslide-votcircleslide in Resources */ = {isa = PBXBuildFile; fileRef = CF422EED12A4F8A1BF5339E060014124 /* votcircleslide-votcircleslide */; };
 		23D13D3F92CEDC5A580EBD60E645B998 /* Pods-votcircleslide_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0297B3668C3FE8FB54D861762BE6B616 /* Pods-votcircleslide_Example-dummy.m */; };
-		3BC767F8676A7479BCBF9839ABC25E40 /* ic_vot_thumb_swipeRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 854FBB4D3BA547C8CFE29929ECAB2362 /* ic_vot_thumb_swipeRight@3x.png */; };
-		41775AFE2576FCCEAC9FC2C317280FE5 /* ic_vot_thumb_180D@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B6DC45ED1607A530CA0E9D8D88FE43 /* ic_vot_thumb_180D@3x.png */; };
 		574A0ED4C1C6CF0A07D339685500A6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		5DB543D1F2F8BC7C8C6F722C2F03FF39 /* ic_vot_thumb_swipeLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B4829EAB4223DE7E4893CAE8A7B3F5C2 /* ic_vot_thumb_swipeLeft@3x.png */; };
-		5E2AC48A0F2CE8A611848324DB2C699B /* VOTCircleSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6CCBEF19ED696D1BE94B8F8EB442B6 /* VOTCircleSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EEF11B6BA71A6B77F22E9CFEAFCEDAE /* votcircleslide-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F065BE140B9C882BBFCBBA1D275A373E /* votcircleslide-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E2AC48A0F2CE8A611848324DB2C699B /* VOTCircleSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EEF11B6BA71A6B77F22E9CFEAFCEDAE /* votcircleslide-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A5D0FDC8EBA775BCF247A0A1E485988 /* ic_vot_virtualcar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */; };
 		905EF6147CD7516A560C389671CB7A26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		92762736FA34270A84640A409E8B5777 /* Pods-votcircleslide_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DEE64321BD0BC303F4B7B1FC0B6788 /* Pods-votcircleslide_Tests-dummy.m */; };
+		9563923BD56ED090B4338F8F4EB95302 /* ic_vot_thumb_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */; };
 		959BEEB71653096ABA9B8C511F41A2B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		A47D64983FB4E83AC41048E7906887ED /* votcircleslide-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EB85EF9F88106202999482AC232BCB9C /* votcircleslide-dummy.m */; };
-		A873C68A0CCA724236D83EAAD61E6579 /* ic_vot_thumb_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8AA77CA682B3A457F66779FC483A60 /* ic_vot_thumb_default@3x.png */; };
+		A47D64983FB4E83AC41048E7906887ED /* votcircleslide-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */; };
 		AE68713CB29DC5EEB15D3A69B35F2F27 /* Pods-votcircleslide_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09FD623D608C3BCB72F8E8C2A05AAF33 /* Pods-votcircleslide_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6B745A1804133943D0066F8A4B5D033 /* VOTCircleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B781FD289203DDB4AAE3ECF261944A72 /* VOTCircleSlider.m */; };
-		DF2F0A589FC00FFAC7F200126FC56F1F /* ic_vot_thumb_goal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EB771C2E03BE5E101C7DDAB9E805E2 /* ic_vot_thumb_goal@3x.png */; };
+		D657B2E46097EB2408F512111B459F36 /* ic_vot_thumb_180D@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */; };
+		D6B745A1804133943D0066F8A4B5D033 /* VOTCircleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */; };
+		EEFDE83BD04C5A43258BEA68D72E526A /* ic_vot_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */; };
+		F51405BAC7D6ED94981B208CA271E5A2 /* ic_vot_thumb_swipeRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */; };
 		F94EE0C3E679105A5CC7A3EF67B77FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21F71E8B85763A8DE43853CDA367D4A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 383E654C82FF7DF19BF56DB87BFD7D77;
-			remoteInfo = "Pods-votcircleslide_Example";
-		};
-		BA7B02DBBAD3E87F2FD20CD668586E7D /* PBXContainerItemProxy */ = {
+		16E61243780EAFEA978F50515C6A06AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 640040012B99C27E814AF86C57556839;
 			remoteInfo = "votcircleslide-votcircleslide";
 		};
-		D31F8007FA8A654E558248D5DAFCA43E /* PBXContainerItemProxy */ = {
+		AF6BE361463BDAE8CB9DDB5201C09628 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 383E654C82FF7DF19BF56DB87BFD7D77;
+			remoteInfo = "Pods-votcircleslide_Example";
+		};
+		CF273E0FD76F3DAFC8B085C04BD76967 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -53,47 +56,50 @@
 
 /* Begin PBXFileReference section */
 		0297B3668C3FE8FB54D861762BE6B616 /* Pods-votcircleslide_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Example-dummy.m"; sourceTree = "<group>"; };
+		0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.debug.xcconfig; sourceTree = "<group>"; };
+		04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VOTCircleSlider.h; path = votcircleslide/Classes/VOTCircleSlider.h; sourceTree = "<group>"; };
 		09FD623D608C3BCB72F8E8C2A05AAF33 /* Pods-votcircleslide_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Tests-umbrella.h"; sourceTree = "<group>"; };
 		14F5F90CDFC08561D91AC0708EF67B38 /* Pods-votcircleslide_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-votcircleslide_Tests"; path = Pods_votcircleslide_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DE5B17EB97AE14FFA2D21E9BA97637 /* Pods-votcircleslide_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		17EB771C2E03BE5E101C7DDAB9E805E2 /* ic_vot_thumb_goal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_goal@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_goal@3x.png"; sourceTree = "<group>"; };
-		190246CCAE15840B3F98C05757E15788 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1D3327D254B415A58863308ABF43A3D7 /* Pods-votcircleslide_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-votcircleslide_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VOTCircleSlider.m; path = votcircleslide/Classes/VOTCircleSlider.m; sourceTree = "<group>"; };
+		236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_virtualcar@3x.png"; path = "votcircleslide/Assets/ic_vot_virtualcar@3x.png"; sourceTree = "<group>"; };
+		28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "votcircleslide-dummy.m"; sourceTree = "<group>"; };
+		2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_default@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_default@3x.png"; sourceTree = "<group>"; };
+		2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_180D@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_180D@3x.png"; sourceTree = "<group>"; };
 		30A924C1DEF558C105B7C1FE27931832 /* Pods-votcircleslide_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		390C4729437C08D76D7707B9B0868529 /* votcircleslide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.release.xcconfig; sourceTree = "<group>"; };
-		3B6CCBEF19ED696D1BE94B8F8EB442B6 /* VOTCircleSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VOTCircleSlider.h; path = votcircleslide/Classes/VOTCircleSlider.h; sourceTree = "<group>"; };
-		3C2DD15E0A65600E1EDAB8F7042D9523 /* votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "votcircleslide-Info.plist"; sourceTree = "<group>"; };
-		42CC526934300FE053A91A4AF4214269 /* votcircleslide.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = votcircleslide.modulemap; sourceTree = "<group>"; };
-		47D0C4AEB82E344585D9EEA557613279 /* votcircleslide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.debug.xcconfig; sourceTree = "<group>"; };
+		3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.release.xcconfig; sourceTree = "<group>"; };
+		45FB4A49B3740D40027A28A81FEBB101 /* votcircleslide.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = votcircleslide.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		497F9FFDCA1D384365BAE8F6612A1449 /* Pods-votcircleslide_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_car@3x.png"; path = "votcircleslide/Assets/ic_vot_car@3x.png"; sourceTree = "<group>"; };
+		60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeRight@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeRight@3x.png"; sourceTree = "<group>"; };
 		6A94AABE811C0D55CB1234835A33D7AA /* Pods-votcircleslide_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Example-umbrella.h"; sourceTree = "<group>"; };
-		6B8AA77CA682B3A457F66779FC483A60 /* ic_vot_thumb_default@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_default@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_default@3x.png"; sourceTree = "<group>"; };
 		70BE90086F167A086EA5FE7530B856F3 /* Pods-votcircleslide_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-Info.plist"; sourceTree = "<group>"; };
-		7809031E8313ECB1AE14D1DE05C319D6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		780E7D71DAC2B49B19F54D33013545A1 /* Pods-votcircleslide_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		84D292E62EF3326D40B9899C299462E2 /* Pods-votcircleslide_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-votcircleslide_Example"; path = Pods_votcircleslide_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		854FBB4D3BA547C8CFE29929ECAB2362 /* ic_vot_thumb_swipeRight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeRight@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeRight@3x.png"; sourceTree = "<group>"; };
+		868AD2AE8BCFF01EC21DB7E1079A46AA /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-votcircleslide-votcircleslide-Info.plist"; sourceTree = "<group>"; };
+		8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_arrow@3x.png"; path = "votcircleslide/Assets/ic_vot_arrow@3x.png"; sourceTree = "<group>"; };
+		94BDADF91CC00921D87DBB4F0409B137 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		985D7DD1B8C6789F893A09E887ACF404 /* votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "votcircleslide-Info.plist"; sourceTree = "<group>"; };
 		9AEF409D96A17B52B6E716D7F53F2145 /* Pods-votcircleslide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A67351AB2F079CD13BC074A1C872330B /* votcircleslide */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = votcircleslide; path = votcircleslide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD1242CF05BFF43273948BA33378EA3 /* Pods-votcircleslide_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-Info.plist"; sourceTree = "<group>"; };
 		AEAA61572B73E1D5313B135D156E6B27 /* Pods-votcircleslide_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Tests.modulemap"; sourceTree = "<group>"; };
+		AF3050050E17C85718C501C64ABDD272 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B22702FAC7D6FDC871F67268E2E39AE9 /* Pods-votcircleslide_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B4829EAB4223DE7E4893CAE8A7B3F5C2 /* ic_vot_thumb_swipeLeft@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeLeft@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeLeft@3x.png"; sourceTree = "<group>"; };
-		B781FD289203DDB4AAE3ECF261944A72 /* VOTCircleSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VOTCircleSlider.m; path = votcircleslide/Classes/VOTCircleSlider.m; sourceTree = "<group>"; };
 		B950BEAAC36FDFAE30275DEB5D99480F /* Pods-votcircleslide_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_goal@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_goal@3x.png"; sourceTree = "<group>"; };
+		C4A33C0BA8FD048AD36A58FA348023C9 /* votcircleslide-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-prefix.pch"; sourceTree = "<group>"; };
 		C9DEE64321BD0BC303F4B7B1FC0B6788 /* Pods-votcircleslide_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Tests-dummy.m"; sourceTree = "<group>"; };
+		CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-umbrella.h"; sourceTree = "<group>"; };
 		CF422EED12A4F8A1BF5339E060014124 /* votcircleslide-votcircleslide */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "votcircleslide-votcircleslide"; path = votcircleslide.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D8B6DC45ED1607A530CA0E9D8D88FE43 /* ic_vot_thumb_180D@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_180D@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_180D@3x.png"; sourceTree = "<group>"; };
 		DBA50A52F949CFC0975037855AA105F4 /* Pods-votcircleslide_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Example.modulemap"; sourceTree = "<group>"; };
+		DE4FDFBB247B590D104F4E1546B4943C /* votcircleslide.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = votcircleslide.modulemap; sourceTree = "<group>"; };
 		DEC9B6EE111A3576E881F4A734CEEEAE /* Pods-votcircleslide_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E4CD52F8CA0339C8145063A3E2A40BD7 /* votcircleslide-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-prefix.pch"; sourceTree = "<group>"; };
-		E818F1CF5B16443AF9ED0A91A97D8C16 /* votcircleslide.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = votcircleslide.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeLeft@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeLeft@3x.png"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EB85EF9F88106202999482AC232BCB9C /* votcircleslide-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "votcircleslide-dummy.m"; sourceTree = "<group>"; };
-		F065BE140B9C882BBFCBBA1D275A373E /* votcircleslide-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-umbrella.h"; sourceTree = "<group>"; };
-		FC7AF6ABE4A0D65F5297E1CF3EAD76A6 /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-votcircleslide-votcircleslide-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,19 +111,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		748B52F81B7C94EEB420CD21D4D852E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8ACFB0AA74311E7CDB080404D5A2AB13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				905EF6147CD7516A560C389671CB7A26 /* Foundation.framework in Frameworks */,
 				F94EE0C3E679105A5CC7A3EF67B77FD5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0B6FDFD543D0EBC0F784769959532B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,29 +157,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3E93B4641FF7CFDD0039A804A11A2A21 /* votcircleslide */ = {
+		191B1B1F00695AF94C5F60252822566F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D8B6DC45ED1607A530CA0E9D8D88FE43 /* ic_vot_thumb_180D@3x.png */,
-				6B8AA77CA682B3A457F66779FC483A60 /* ic_vot_thumb_default@3x.png */,
-				17EB771C2E03BE5E101C7DDAB9E805E2 /* ic_vot_thumb_goal@3x.png */,
-				B4829EAB4223DE7E4893CAE8A7B3F5C2 /* ic_vot_thumb_swipeLeft@3x.png */,
-				854FBB4D3BA547C8CFE29929ECAB2362 /* ic_vot_thumb_swipeRight@3x.png */,
-				3B6CCBEF19ED696D1BE94B8F8EB442B6 /* VOTCircleSlider.h */,
-				B781FD289203DDB4AAE3ECF261944A72 /* VOTCircleSlider.m */,
-				5EFCF5DC691D1628D7F480299F13A99D /* Pod */,
-				D95AF27C933ACCEF584657A11C6A9F3A /* Support Files */,
+				94BDADF91CC00921D87DBB4F0409B137 /* LICENSE */,
+				AF3050050E17C85718C501C64ABDD272 /* README.md */,
+				45FB4A49B3740D40027A28A81FEBB101 /* votcircleslide.podspec */,
 			);
-			name = votcircleslide;
-			path = ../..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		490FBB9EAE00AA88953AED111D6BAFFB /* Development Pods */ = {
+		4A2F9AC7ED944CF36BA71AA435FC6437 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3E93B4641FF7CFDD0039A804A11A2A21 /* votcircleslide */,
+				868AD2AE8BCFF01EC21DB7E1079A46AA /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */,
+				DE4FDFBB247B590D104F4E1546B4943C /* votcircleslide.modulemap */,
+				28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */,
+				985D7DD1B8C6789F893A09E887ACF404 /* votcircleslide-Info.plist */,
+				C4A33C0BA8FD048AD36A58FA348023C9 /* votcircleslide-prefix.pch */,
+				CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */,
+				0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */,
+				3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/votcircleslide";
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -183,16 +190,6 @@
 				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		5EFCF5DC691D1628D7F480299F13A99D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7809031E8313ECB1AE14D1DE05C319D6 /* LICENSE */,
-				190246CCAE15840B3F98C05757E15788 /* README.md */,
-				E818F1CF5B16443AF9ED0A91A97D8C16 /* votcircleslide.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		6020092C0D7A587B9EAED27995D9B495 /* Targets Support Files */ = {
@@ -220,6 +217,26 @@
 			path = "Target Support Files/Pods-votcircleslide_Tests";
 			sourceTree = "<group>";
 		};
+		9945C6A95EBBA4CFA82B209B46146E38 /* votcircleslide */ = {
+			isa = PBXGroup;
+			children = (
+				8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */,
+				5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */,
+				2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */,
+				2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */,
+				BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */,
+				E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */,
+				60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */,
+				236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */,
+				04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */,
+				2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */,
+				191B1B1F00695AF94C5F60252822566F /* Pod */,
+				4A2F9AC7ED944CF36BA71AA435FC6437 /* Support Files */,
+			);
+			name = votcircleslide;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		C27FF4D97FC71C6D4F4C681140E38386 /* Pods-votcircleslide_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,27 +258,19 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				490FBB9EAE00AA88953AED111D6BAFFB /* Development Pods */,
+				F55E20E98A32BC2EFCFFB3109B2E6B6D /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				0B3191B6AFD3464C61A137A1E0E2E316 /* Products */,
 				6020092C0D7A587B9EAED27995D9B495 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D95AF27C933ACCEF584657A11C6A9F3A /* Support Files */ = {
+		F55E20E98A32BC2EFCFFB3109B2E6B6D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FC7AF6ABE4A0D65F5297E1CF3EAD76A6 /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */,
-				42CC526934300FE053A91A4AF4214269 /* votcircleslide.modulemap */,
-				EB85EF9F88106202999482AC232BCB9C /* votcircleslide-dummy.m */,
-				3C2DD15E0A65600E1EDAB8F7042D9523 /* votcircleslide-Info.plist */,
-				E4CD52F8CA0339C8145063A3E2A40BD7 /* votcircleslide-prefix.pch */,
-				F065BE140B9C882BBFCBBA1D275A373E /* votcircleslide-umbrella.h */,
-				47D0C4AEB82E344585D9EEA557613279 /* votcircleslide.debug.xcconfig */,
-				390C4729437C08D76D7707B9B0868529 /* votcircleslide.release.xcconfig */,
+				9945C6A95EBBA4CFA82B209B46146E38 /* votcircleslide */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/votcircleslide";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +316,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CEAD2F48A8C0F3B47891CEF0284411B7 /* PBXTargetDependency */,
+				7641A0D54F25CD5B1B85862530B120D3 /* PBXTargetDependency */,
 			);
 			name = "Pods-votcircleslide_Example";
 			productName = Pods_votcircleslide_Example;
@@ -326,7 +335,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				9D719CA8F1A97AD0F64F02BFF9EA5990 /* PBXTargetDependency */,
+				FF95CFA20A19756610D28565C7E5C7F6 /* PBXTargetDependency */,
 			);
 			name = "Pods-votcircleslide_Tests";
 			productName = Pods_votcircleslide_Tests;
@@ -335,11 +344,11 @@
 		};
 		640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75700D2A06001C0678D56DA2724C46EA /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */;
+			buildConfigurationList = 10F50CFE8DAF5A8D4DC8453F4B497903 /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */;
 			buildPhases = (
-				2BEC66BB3BFCC60862E4849FD36F46B9 /* Sources */,
-				748B52F81B7C94EEB420CD21D4D852E9 /* Frameworks */,
-				73E4D1364E300D5A10655B08A94D4682 /* Resources */,
+				B991907E542A4AEB896A3B7F749D5392 /* Sources */,
+				E0B6FDFD543D0EBC0F784769959532B3 /* Frameworks */,
+				DD1E0DFBD10FDD1114AB525142F6FA43 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -362,7 +371,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				545BB71B7C42FEC4F1633AAA92867ADF /* PBXTargetDependency */,
+				ECB91B2C51B41DEA154199CE0EA30E7F /* PBXTargetDependency */,
 			);
 			name = votcircleslide;
 			productName = votcircleslide;
@@ -400,18 +409,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		73E4D1364E300D5A10655B08A94D4682 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41775AFE2576FCCEAC9FC2C317280FE5 /* ic_vot_thumb_180D@3x.png in Resources */,
-				A873C68A0CCA724236D83EAAD61E6579 /* ic_vot_thumb_default@3x.png in Resources */,
-				DF2F0A589FC00FFAC7F200126FC56F1F /* ic_vot_thumb_goal@3x.png in Resources */,
-				5DB543D1F2F8BC7C8C6F722C2F03FF39 /* ic_vot_thumb_swipeLeft@3x.png in Resources */,
-				3BC767F8676A7479BCBF9839ABC25E40 /* ic_vot_thumb_swipeRight@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AF8C7BC726DF94558D7D18B0A214D52A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,6 +424,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD1E0DFBD10FDD1114AB525142F6FA43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEFDE83BD04C5A43258BEA68D72E526A /* ic_vot_arrow@3x.png in Resources */,
+				02BE34CD45F150E545D16DA0E861D91B /* ic_vot_car@3x.png in Resources */,
+				D657B2E46097EB2408F512111B459F36 /* ic_vot_thumb_180D@3x.png in Resources */,
+				9563923BD56ED090B4338F8F4EB95302 /* ic_vot_thumb_default@3x.png in Resources */,
+				09C852080476B92F8ACDB2A2DBB12E69 /* ic_vot_thumb_goal@3x.png in Resources */,
+				030F985278E87023A88FA42E87F2F9F9 /* ic_vot_thumb_swipeLeft@3x.png in Resources */,
+				F51405BAC7D6ED94981B208CA271E5A2 /* ic_vot_thumb_swipeRight@3x.png in Resources */,
+				8A5D0FDC8EBA775BCF247A0A1E485988 /* ic_vot_virtualcar@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4212CCDB4D1583C71B4ED428438C184 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,13 +449,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2BEC66BB3BFCC60862E4849FD36F46B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45E7609877186B636E595E9738C32D49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +466,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B991907E542A4AEB896A3B7F749D5392 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF5050D6512BF9E42F7716D509950CCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,43 +484,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		545BB71B7C42FEC4F1633AAA92867ADF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "votcircleslide-votcircleslide";
-			target = 640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */;
-			targetProxy = BA7B02DBBAD3E87F2FD20CD668586E7D /* PBXContainerItemProxy */;
-		};
-		9D719CA8F1A97AD0F64F02BFF9EA5990 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-votcircleslide_Example";
-			target = 383E654C82FF7DF19BF56DB87BFD7D77 /* Pods-votcircleslide_Example */;
-			targetProxy = 21F71E8B85763A8DE43853CDA367D4A3 /* PBXContainerItemProxy */;
-		};
-		CEAD2F48A8C0F3B47891CEF0284411B7 /* PBXTargetDependency */ = {
+		7641A0D54F25CD5B1B85862530B120D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = votcircleslide;
 			target = A38E8F41604A2D40583FF119FFC6FE42 /* votcircleslide */;
-			targetProxy = D31F8007FA8A654E558248D5DAFCA43E /* PBXContainerItemProxy */;
+			targetProxy = CF273E0FD76F3DAFC8B085C04BD76967 /* PBXContainerItemProxy */;
+		};
+		ECB91B2C51B41DEA154199CE0EA30E7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "votcircleslide-votcircleslide";
+			target = 640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */;
+			targetProxy = 16E61243780EAFEA978F50515C6A06AF /* PBXContainerItemProxy */;
+		};
+		FF95CFA20A19756610D28565C7E5C7F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-votcircleslide_Example";
+			target = 383E654C82FF7DF19BF56DB87BFD7D77 /* Pods-votcircleslide_Example */;
+			targetProxy = AF6BE361463BDAE8CB9DDB5201C09628 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08C56EBF7CAE12C69E10FB92D818A491 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 390C4729437C08D76D7707B9B0868529 /* votcircleslide.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/votcircleslide";
-				IBSC_MODULE = votcircleslide;
-				INFOPLIST_FILE = "Target Support Files/votcircleslide/ResourceBundle-votcircleslide-votcircleslide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PRODUCT_NAME = votcircleslide;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		1E1AD9BC25059C21812DB8C9EAEBCA6C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B22702FAC7D6FDC871F67268E2E39AE9 /* Pods-votcircleslide_Example.release.xcconfig */;
@@ -612,7 +608,7 @@
 		};
 		55D90C868D530CC1778752A128D1C453 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 390C4729437C08D76D7707B9B0868529 /* votcircleslide.release.xcconfig */;
+			baseConfigurationReference = 3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -738,7 +734,7 @@
 		};
 		AB156838BDB6CA58767B4BAA8F9398E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47D0C4AEB82E344585D9EEA557613279 /* votcircleslide.debug.xcconfig */;
+			baseConfigurationReference = 0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -766,9 +762,9 @@
 			};
 			name = Debug;
 		};
-		B46918C1F62F5D4C0DEE279CB879B04B /* Debug */ = {
+		ACD035CD45810CA12521A2B92B778EF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47D0C4AEB82E344585D9EEA557613279 /* votcircleslide.debug.xcconfig */;
+			baseConfigurationReference = 0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/votcircleslide";
 				IBSC_MODULE = votcircleslide;
@@ -781,6 +777,22 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
+		};
+		C16C15CA41B4E1FFCC98EA6EA98F10CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/votcircleslide";
+				IBSC_MODULE = votcircleslide;
+				INFOPLIST_FILE = "Target Support Files/votcircleslide/ResourceBundle-votcircleslide-votcircleslide-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PRODUCT_NAME = votcircleslide;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -851,6 +863,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		10F50CFE8DAF5A8D4DC8453F4B497903 /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD035CD45810CA12521A2B92B778EF1 /* Debug */,
+				C16C15CA41B4E1FFCC98EA6EA98F10CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3D6D59A3D720EE21090DC40F35F81D7A /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -865,15 +886,6 @@
 			buildConfigurations = (
 				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
 				7EE7A78859F657F6BEFC651185B43192 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75700D2A06001C0678D56DA2724C46EA /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B46918C1F62F5D4C0DEE279CB879B04B /* Debug */,
-				08C56EBF7CAE12C69E10FB92D818A491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
