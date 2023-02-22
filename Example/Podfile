@@ -2,7 +2,7 @@
 #cource 'ssh://git@10.54.147.91:5522/root/ios_podspecs.git'
 use_frameworks!
 
-platform :ios, '9.3'
+platform :ios, '11.0'
 
 target 'votcircleslide_Example' do
   pod 'votcircleslide', :path => '../'

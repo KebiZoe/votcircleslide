@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.author           = { 's.zengxiangxian' => 's.zengxiangxian@byd.com' }
   s.source           = { :git => 'http://10.54.147.91:5580/s.zengxiangxian/votcircleslide.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'votcircleslide/Classes/**/*'
   
