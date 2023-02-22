@@ -90,17 +90,19 @@
     self.degreeImgV.image = [self drawLineOfDashByImageView:self.degreeImgV];
     [self addSubview:self.degreeImgV];
     
-    self.arrowimgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2-kAutoSize(191)/2, self.frame.size.height/2-self.circleRadius-kAutoSize(10), kAutoSize(191), kAutoSize(43))];
+    CGFloat standardRadius = kScreenWidth/2-kAutoSize(61);
+    CGFloat scale = self.circleRadius/standardRadius;
+    self.arrowimgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2-kAutoSize(191)*scale/2, self.frame.size.height/2-self.circleRadius-kAutoSize(10), kAutoSize(191)*scale, kAutoSize(43)*scale)];
     self.arrowimgV.image = UIImageLoadWithName(@"ic_vot_arrow");
     self.arrowimgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.arrowimgV];
     
-    self.virtualCarImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(81)/2, self.drawCenter.y-kAutoSize(183)/2, kAutoSize(81), kAutoSize(183))];
+    self.virtualCarImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(81)*scale/2, self.drawCenter.y-kAutoSize(183)*scale/2, kAutoSize(81)*scale, kAutoSize(183)*scale)];
     self.virtualCarImgV.image = UIImageLoadWithName(@"ic_vot_virtualcar");
     self.virtualCarImgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.virtualCarImgV];
     
-    self.carImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(113)/2, self.drawCenter.y-kAutoSize(215)/2, kAutoSize(113), kAutoSize(215))];
+    self.carImgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.drawCenter.x-kAutoSize(113)*scale/2, self.drawCenter.y-kAutoSize(215)*scale/2, kAutoSize(113)*scale, kAutoSize(215)*scale)];
     self.carImgV.image = UIImageLoadWithName(@"ic_vot_car");
     self.carImgV.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.carImgV];
@@ -222,6 +224,7 @@
                        clockwise:YES];
     CGContextSaveGState(ctx);
     CGContextSetShouldAntialias(ctx, YES);
+    CGContextSetLineCap(ctx, kCGLineCapRound);
     CGContextSetLineWidth(ctx, self.circleBorderWidth);
     CGContextSetStrokeColorWithColor(ctx, self.setTrackTintColor.CGColor);
     CGContextAddPath(ctx, circlePath.CGPath);
@@ -245,6 +248,7 @@
     CGContextSaveGState(ctx);
     CGContextSetShouldAntialias(ctx, YES);
     CGContextSetLineWidth(ctx, self.circleBorderWidth);
+    CGContextSetLineCap(ctx, kCGLineCapRound);
     CGContextSetStrokeColorWithColor(ctx, self.downTrackTintColor.CGColor);
     CGContextAddPath(ctx, loadPath.CGPath);
     CGContextDrawPath(ctx, kCGPathStroke);
@@ -375,7 +379,7 @@
     CGFloat moveX = point.x;
     CGFloat moveY = point.y;
     
-    double dist = sqrt(pow((moveX - centerY), 2) + pow(moveY - centerY, 2));
+    double dist = sqrt(pow((moveX - centerX), 2) + pow(moveY - centerY, 2));
     /*
      * 计算移动点的坐标
      * sinAlpha = 亮点在x轴上投影的长度 ／ 距离
@@ -384,7 +388,7 @@
      */
     double sinAlpha = (moveX - centerX) / dist;
     double xT = self.circleRadius * sinAlpha + centerX;
-    double yT = sqrt((self.circleRadius * self.circleRadius - (xT - centerX) * (xT - centerX))) + centerY;
+    double yT = sqrt(fabs((self.circleRadius * self.circleRadius - (xT - centerX) * (xT - centerX)))) + centerY;
     if (moveY < centerY) {
         yT = centerY - fabs(yT - centerY);
     }

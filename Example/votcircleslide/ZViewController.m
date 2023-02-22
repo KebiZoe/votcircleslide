@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    NSLog(@"hello world");
     [self.view addSubview:self.circleSlider];
     [self.view addSubview:self.currentValueLabel];
     [self.view addSubview:self.finalValueLabel];
@@ -43,7 +42,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark getter
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
         _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - 300) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
@@ -146,12 +145,6 @@
 }
 
 #pragma mark - action
-
-/*以下三个方法，都要添加对slider.interaction的判断。
- *因为虽然看起来是个圆环，但是响应手势的区域确实整个矩形的View
- *在内部添加了interaction这个属性用于限定响应区域，在规定的区
- */
-
 - (void)circleSliderTouchDown:(VOTCircleSlider *)slider {
     self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
     self.progressSlider.value = slider.value;
