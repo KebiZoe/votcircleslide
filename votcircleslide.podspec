@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'votcircleslide'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '环形滑块.'
 
   s.description      = <<-DESC
