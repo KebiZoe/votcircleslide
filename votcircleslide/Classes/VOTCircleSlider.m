@@ -112,6 +112,33 @@
     [self addSubview:self.showDegreeLbl];
     [self addObserver:self forKeyPath:@"userInteractionEnabled" options:NSKeyValueObservingOptionNew context:nil];
 }
+- (void)resumeAnimation:(BOOL) anima{
+    CGFloat aniAngle;
+    // 如果是180度的时候动画的方向是不能确定的，必须小于180度是才能确定动画方向
+    if (self.loadProgress*self.value==0.5){
+        aniAngle = 2 * M_PI * 0.499;
+    }else if (self.loadProgress*self.value==-0.5){
+        aniAngle = -2 * M_PI * 0.499;
+    }else{
+        aniAngle = 2 * M_PI * self.loadProgress * self.value;
+    }
+    
+    self.angle = 0;
+    self.value = 0;
+    self.loadProgress = 0;
+    
+    if (anima == YES){
+        self.transform = CGAffineTransformMakeRotation(aniAngle);
+        self.thumbView.hidden = YES;
+        self.showDegreeLbl.hidden = YES;
+        [UIView animateWithDuration:2 animations:^{
+            self.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            self.thumbView.hidden = NO;
+            self.showDegreeLbl.hidden = NO;
+        }];
+    }
+}
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     int interaction = [[change valueForKey:@"new"] intValue];

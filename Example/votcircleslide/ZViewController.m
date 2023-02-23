@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) UILabel *valueLabel;
 @property (nonatomic, strong) UILabel *progressLabel;
+@property(nonatomic, strong) UIButton *resume;
 @end
 
 @implementation ZViewController
@@ -36,6 +37,7 @@
     [self.view addSubview:self.loadProgressSlider];
     [self.view addSubview:self.valueLabel];
     [self.view addSubview:self.progressLabel];
+    [self.view addSubview:self.resume];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,7 +145,17 @@
     }
     return _valueLabel;
 }
-
+- (UIButton *)resume {
+    if (!_resume){
+        _resume = [UIButton buttonWithType:UIButtonTypeCustom];
+        _resume.frame = CGRectMake(self.view.center.x-100, kScreenHeight - 180, 200, 40);
+        _resume.backgroundColor = UIColor.darkGrayColor;
+        _resume.layer.cornerRadius = 8;
+        [_resume setTitle:@"重新开始" forState:UIControlStateNormal];
+        [_resume addTarget:self action:@selector(handleResumeAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return  _resume;
+}
 #pragma mark - action
 - (void)circleSliderTouchDown:(VOTCircleSlider *)slider {
     self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
@@ -179,5 +191,10 @@
     } else if (slider.tag == 101) {
         
     }
+}
+- (void)handleResumeAction:(id)sender{
+    [self.circleSlider resumeAnimation:YES];
+    self.progressSlider.value = 0;
+    self.loadProgressSlider.value = 0;
 }
 @end

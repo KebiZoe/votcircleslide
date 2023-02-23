@@ -34,5 +34,5 @@
 @property (nonatomic, assign) float value;                  //slider当前的value
 /// loadProgress的在0-1之间，加载到1是位置和设定位置一样
 @property (nonatomic, assign) float loadProgress;           //slider加载的进度
-
+- (void)resumeAnimation:(BOOL) anima;
 @end
