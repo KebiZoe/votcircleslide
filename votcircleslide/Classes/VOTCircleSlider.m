@@ -85,7 +85,7 @@
     self.circleStartPoint = CGPointMake(self.drawCenter.x, self.drawCenter.y - self.circleRadius);
     self.loadProgress = 0.0;
     self.angle = 0;
-    
+    self.precision = 10;
     self.degreeImgV.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     self.degreeImgV.image = [self drawLineOfDashByImageView:self.degreeImgV];
     [self addSubview:self.degreeImgV];
@@ -286,7 +286,9 @@
      * x = r * sin(alpha) + 圆心的x坐标, sin在0-PI之间为正，PI-2*PI之间为负
      * y 可以通过-r * cos(alpha) + 圆心的y坐标来计算。
      */
+    
     double alpha = self.value * 2 * M_PI;
+    _angle = self.value * 360;
     double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
     double y = -self.circleRadius * cos(alpha) + self.drawCenter.y;
     self.lastPoint = CGPointMake(x, y);
@@ -364,11 +366,11 @@
 
     //如果点击点和上一次点击点的距离大于20，不做操作。
     double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
-    [self moveHandlerWithPoint:starTouchPoint];
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
     if (touchDist > 20) {
         return NO;
     }
+    [self moveHandlerWithPoint:starTouchPoint];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
     return YES;
 }
 
@@ -378,11 +380,6 @@
     CGPoint starTouchPoint = [touch locationInView:self];
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
-//    //如果点击点和圆心的距离大于60，不做操作。
-//    double dist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.drawCenter];
-//    if (fabs(dist - self.circleRadius) > kAutoSize(60)) {
-//        return NO;
-//    }
     return YES;
 }
 
@@ -393,7 +390,7 @@
     CGPoint starTouchPoint = [touch locationInView:self];
     
     [self moveHandlerWithPoint:starTouchPoint];
-    
+    [self adsorbedToTheNearestscale];
     [self sendActionsForControlEvents:UIControlEventEditingDidEnd];
 }
 
@@ -441,7 +438,47 @@
     self.value = angle / 360;
     
 }
-
+// 吸附到最近精度值
+- (void)adsorbedToTheNearestscale {
+    if (self.precision < 1){
+        return;
+    }
+    self.angle = floor((self.angle + 0.5 * self.precision) / self.precision) * self.precision;
+    _value = self.angle/360;
+    
+    double alpha = _value * 2 * M_PI;
+    double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
+    double y = -self.circleRadius * cos(alpha) + self.drawCenter.y;
+    
+    self.lastPoint = CGPointMake(x, y);
+    
+    double LL = self.circleRadius + kAutoSize(35);
+    double xL = LL * sin(alpha) + self.drawCenter.x;
+    double yL = -(LL-kAutoSize(10)) * cos(alpha) + self.drawCenter.y;
+    
+    self.showDegreeLbl.text = [NSString stringWithFormat:@"%.0f°",ABS(self.value*360)];
+    CGSize size = [self.showDegreeLbl sizeThatFits:CGSizeMake(200, 30)];
+    
+    if(self.angle<-179.5){
+        self.thumbView.image = _thumb180DImage;
+    }else if(self.angle <= -0.5){
+        self.thumbView.image = _thumbswipeLeftImage;
+    }else if(self.angle > -0.5&&self.angle < 0.5){
+        self.thumbView.image = _thumbDefaultImage;
+    }else if (self.angle >=0.5&&self.angle<179.5){
+        self.thumbView.image = _thumbswipeRightImage;
+    }else{
+        self.thumbView.image = _thumb180DImage;
+    }
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.thumbView.center = self.lastPoint;
+        self.thumbView.transform = CGAffineTransformMakeRotation(self.value*M_PI*2);
+        self.virtualCarImgV.transform = CGAffineTransformMakeRotation(self.value*M_PI*2);
+        self.showDegreeLbl.frame = CGRectMake(self.showDegreeLbl.frame.origin.x, self.showDegreeLbl.frame.origin.y, size.width+10, size.height);
+        self.showDegreeLbl.center = CGPointMake(xL, yL);
+    }];
+}
 #pragma mark - Util
 
 /**

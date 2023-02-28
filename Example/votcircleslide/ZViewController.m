@@ -65,7 +65,7 @@
     if (!_currentValueLabel) {
         _currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, kAutoSize(100), 200, 30)];
         _currentValueLabel.textAlignment = NSTextAlignmentCenter;
-        _currentValueLabel.text = @"当前值：0";
+        _currentValueLabel.text = @"当前值：0°";
     }
     return _currentValueLabel;
 }
@@ -74,7 +74,7 @@
     if (!_finalValueLabel) {
         _finalValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, kAutoSize(140), 200, 30)];
         _finalValueLabel.textAlignment = NSTextAlignmentCenter;
-        _finalValueLabel.text = @"最终值：0";
+        _finalValueLabel.text = @"最终值：0°";
     }
     return _finalValueLabel;
 }
@@ -103,7 +103,7 @@
     if (!_progressValueLabel) {
         _progressValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 230) / 2.0, kAutoSize(180), 230, 30)];
         _progressValueLabel.textAlignment = NSTextAlignmentCenter;
-        _progressValueLabel.text = @"加载进度：0";
+        _progressValueLabel.text = @"加载进度：0%";
     }
     return _progressValueLabel;
 }
@@ -158,43 +158,50 @@
 }
 #pragma mark - action
 - (void)circleSliderTouchDown:(VOTCircleSlider *)slider {
-    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°",slider.value * 360];
     self.progressSlider.value = slider.value;
 }
 
 - (void)circleSliderValueChanging:(VOTCircleSlider *)slider {
     
-    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°",slider.value * 360];
     self.progressSlider.value = slider.value;
 }
 
 - (void)circleSliderValueDidChanged:(VOTCircleSlider *)slider {
-    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
-    self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f",slider.value * 360];
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°",slider.value * 360];
+    self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f°",slider.value * 360];
     self.progressSlider.value = slider.value;
 }
 
 - (void)progressSliderValueChanging:(UISlider *)slider {
     if (slider.tag == 100) {
-        self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f",slider.value * 360];
+        self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°",slider.value * 360];
         self.circleSlider.value = slider.value;
     } else if (slider.tag == 101) {
-        self.progressValueLabel.text = [NSString stringWithFormat:@"加载进度：%.0f",slider.value * 360];
+        self.progressValueLabel.text = [NSString stringWithFormat:@"加载进度：%.0f%%",slider.value * 100];
         self.circleSlider.loadProgress = slider.value;
     }
 }
 
 - (void)progressSliderValueDidChanged:(UISlider *)slider {
     if (slider.tag == 100) {
-        self.progressSlider.value = slider.value;
-        self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f",slider.value * 360];
+        self.circleSlider.value = slider.value;
+        [self.circleSlider adsorbedToTheNearestscale];
+        self.progressSlider.value = self.circleSlider.value;
+        self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°",self.circleSlider.value * 360];
+        self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f°",self.circleSlider.value * 360];
     } else if (slider.tag == 101) {
-        
+        self.progressValueLabel.text = [NSString stringWithFormat:@"加载进度：%.0f%%",slider.value * 100];
+        self.circleSlider.loadProgress = slider.value;
     }
 }
 - (void)handleResumeAction:(id)sender{
     [self.circleSlider resumeAnimation:YES];
     self.progressSlider.value = 0;
     self.loadProgressSlider.value = 0;
+    self.currentValueLabel.text = [NSString stringWithFormat:@"当前值：%.0f°", 0.0];
+    self.finalValueLabel.text = [NSString stringWithFormat:@"最终值：%.0f°", 0.0];
+    self.progressValueLabel.text = [NSString stringWithFormat:@"加载进度：%.0f%%", 0.0];
 }
 @end

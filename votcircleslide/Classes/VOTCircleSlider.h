@@ -32,7 +32,11 @@
 @property (nonatomic, assign) CGFloat thumbRadius;          //滑块正常的半径
 ///value的值在-0.5-0.5之间，负数为逆时针
 @property (nonatomic, assign) float value;                  //slider当前的value
+/// 设置旋转角度时的精度，默认为10度。四舍五入原则。
+@property(nonatomic, assign) CGFloat precision;
 /// loadProgress的在0-1之间，加载到1是位置和设定位置一样
 @property (nonatomic, assign) float loadProgress;           //slider加载的进度
 - (void)resumeAnimation:(BOOL) anima;
+/// 吸附到最近精度值位置
+- (void)adsorbedToTheNearestscale;
 @end
