@@ -47,7 +47,7 @@
 #pragma mark getter
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
-        _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - 300) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
+        _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - kAutoSize(300)) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
         [_circleSlider addTarget:self
                           action:@selector(circleSliderTouchDown:)
                 forControlEvents:UIControlEventTouchDown];
@@ -63,7 +63,7 @@
 
 - (UILabel *)currentValueLabel {
     if (!_currentValueLabel) {
-        _currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, 100, 200, 30)];
+        _currentValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, kAutoSize(100), 200, 30)];
         _currentValueLabel.textAlignment = NSTextAlignmentCenter;
         _currentValueLabel.text = @"当前值：0";
     }
@@ -72,7 +72,7 @@
 
 - (UILabel *)finalValueLabel {
     if (!_finalValueLabel) {
-        _finalValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, 140, 200, 30)];
+        _finalValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 200) / 2.0, kAutoSize(140), 200, 30)];
         _finalValueLabel.textAlignment = NSTextAlignmentCenter;
         _finalValueLabel.text = @"最终值：0";
     }
@@ -81,7 +81,7 @@
 
 - (UISlider *)progressSlider {
     if (!_progressSlider) {
-        _progressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - 60, kScreenWidth - 80 - 20, 30)];
+        _progressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - kAutoSize(60), kScreenWidth - 80 - 20, 30)];
         _progressSlider.backgroundColor = [UIColor clearColor];
         _progressSlider.minimumValue = -0.5;
         _progressSlider.maximumValue = 0.5;
@@ -101,7 +101,7 @@
 
 - (UILabel *)progressValueLabel {
     if (!_progressValueLabel) {
-        _progressValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 230) / 2.0, 180, 230, 30)];
+        _progressValueLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth - 230) / 2.0, kAutoSize(180), 230, 30)];
         _progressValueLabel.textAlignment = NSTextAlignmentCenter;
         _progressValueLabel.text = @"加载进度：0";
     }
@@ -110,7 +110,7 @@
 
 - (UISlider *)loadProgressSlider {
     if (!_loadProgressSlider) {
-        _loadProgressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - 100, kScreenWidth - 80 - 20, 30)];
+        _loadProgressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - kAutoSize(100), kScreenWidth - 80 - 20, 30)];
         _loadProgressSlider.backgroundColor = [UIColor clearColor];
         _loadProgressSlider.minimumValue = 0;
         _loadProgressSlider.maximumValue = 1;
@@ -130,7 +130,7 @@
 
 - (UILabel *)progressLabel {
     if (!_progressLabel) {
-        _progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, kScreenHeight - 100, 50, 30)];
+        _progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, kScreenHeight - kAutoSize(100), 50, 30)];
         _progressLabel.text = @"加载进度:";
         [_progressLabel sizeToFit];
     }
@@ -139,7 +139,7 @@
 
 - (UILabel *)valueLabel {
     if (!_valueLabel) {
-        _valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, kScreenHeight - 60, 50, 30)];
+        _valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, kScreenHeight - kAutoSize(60), 50, 30)];
         _valueLabel.text = @"value:";
         [_valueLabel sizeToFit];
     }
@@ -148,7 +148,7 @@
 - (UIButton *)resume {
     if (!_resume){
         _resume = [UIButton buttonWithType:UIButtonTypeCustom];
-        _resume.frame = CGRectMake(self.view.center.x-100, kScreenHeight - 180, 200, 40);
+        _resume.frame = CGRectMake(self.view.center.x-100, kScreenHeight - kAutoSize(180), 200, 40);
         _resume.backgroundColor = UIColor.darkGrayColor;
         _resume.layer.cornerRadius = 8;
         [_resume setTitle:@"重新开始" forState:UIControlStateNormal];

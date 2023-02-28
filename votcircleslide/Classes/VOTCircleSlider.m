@@ -131,7 +131,7 @@
         self.transform = CGAffineTransformMakeRotation(aniAngle);
         self.thumbView.hidden = YES;
         self.showDegreeLbl.hidden = YES;
-        [UIView animateWithDuration:2 animations:^{
+        [UIView animateWithDuration:0.25 animations:^{
             self.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
             self.thumbView.hidden = NO;
