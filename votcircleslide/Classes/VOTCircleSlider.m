@@ -365,10 +365,10 @@
     CGPoint starTouchPoint = [touch locationInView:self];
 
     //如果点击点和上一次点击点的距离大于20，不做操作。
-    double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
-    if (touchDist > 20) {
-        return NO;
-    }
+//    double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
+//    if (touchDist > 20) {
+//        return NO;
+//    }
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
     return YES;
