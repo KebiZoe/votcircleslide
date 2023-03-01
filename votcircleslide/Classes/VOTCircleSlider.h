@@ -26,7 +26,7 @@
 @property (nullable, nonatomic, strong) UIColor *setTrackTintColor; //设置将要原地转向弧度的颜色
 @property (nullable, nonatomic, strong) UIColor *downTrackTintColor; //已执行进度的颜色
 
-@property (nonatomic, assign) CGFloat circleBorderWidth;    //圆的宽度
+@property (nonatomic, assign) CGFloat circleBorderWidth;    //圆环的宽度
 @property (nonatomic, assign, readonly) CGFloat circleRadius;        //圆形进度条的半径，默认比view的宽高中最小者还要小48,为了在圆外显示刻度
 
 @property (nonatomic, assign) CGFloat thumbRadius;          //滑块正常的半径

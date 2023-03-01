@@ -225,9 +225,6 @@
 #pragma mark - drwRect
 
 - (void)drawRect:(CGRect)rect {
-    self.drawCenter = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
-    self.circleStartPoint = CGPointMake(self.drawCenter.x, self.drawCenter.y - self.circleRadius);
-
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     //圆形的背景颜色
@@ -288,7 +285,18 @@
      */
     
     double alpha = self.value * 2 * M_PI;
-    _angle = self.value * 360;
+    self.angle = self.value * 360;
+    if(self.angle<-179.5){
+        self.thumbView.image = _thumb180DImage;
+    }else if(self.angle <= -0.5){
+        self.thumbView.image = _thumbswipeLeftImage;
+    }else if(self.angle > -0.5&&self.angle < 0.5){
+        self.thumbView.image = _thumbDefaultImage;
+    }else if (self.angle >=0.5&&self.angle<179.5){
+        self.thumbView.image = _thumbswipeRightImage;
+    }else{
+        self.thumbView.image = _thumb180DImage;
+    }
     double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
     double y = -self.circleRadius * cos(alpha) + self.drawCenter.y;
     self.lastPoint = CGPointMake(x, y);
@@ -311,6 +319,7 @@
     
     self.showDegreeLbl.center = CGPointMake(xL, yL);
 }
+
 - (UIImage *)drawLineOfDashByImageView:(UIImageView *)imageView {
     // 开始划线 划线的frame
     UIGraphicsBeginImageContext(imageView.frame.size);
@@ -424,19 +433,7 @@
                                                   endCenter:self.lastPoint];
     self.angle = angle;
     
-    if(self.angle<-179.5){
-        self.thumbView.image = _thumb180DImage;
-    }else if(self.angle <= -0.5){
-        self.thumbView.image = _thumbswipeLeftImage;
-    }else if(self.angle > -0.5&&self.angle < 0.5){
-        self.thumbView.image = _thumbDefaultImage;
-    }else if (self.angle >=0.5&&self.angle<179.5){
-        self.thumbView.image = _thumbswipeRightImage;
-    }else{
-        self.thumbView.image = _thumb180DImage;
-    }
     self.value = angle / 360;
-    
 }
 // 吸附到最近精度值
 - (void)adsorbedToTheNearestscale {
@@ -444,7 +441,7 @@
         return;
     }
     self.angle = floor((self.angle + 0.5 * self.precision) / self.precision) * self.precision;
-    _value = self.angle/360;
+    self.value = self.angle/360;
     
     double alpha = _value * 2 * M_PI;
     double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
@@ -458,18 +455,6 @@
     
     self.showDegreeLbl.text = [NSString stringWithFormat:@"%.0f°",ABS(self.value*360)];
     CGSize size = [self.showDegreeLbl sizeThatFits:CGSizeMake(200, 30)];
-    
-    if(self.angle<-179.5){
-        self.thumbView.image = _thumb180DImage;
-    }else if(self.angle <= -0.5){
-        self.thumbView.image = _thumbswipeLeftImage;
-    }else if(self.angle > -0.5&&self.angle < 0.5){
-        self.thumbView.image = _thumbDefaultImage;
-    }else if (self.angle >=0.5&&self.angle<179.5){
-        self.thumbView.image = _thumbswipeRightImage;
-    }else{
-        self.thumbView.image = _thumb180DImage;
-    }
     
     [UIView animateWithDuration:0.25 animations:^{
         self.thumbView.center = self.lastPoint;
