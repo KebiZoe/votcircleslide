@@ -48,6 +48,8 @@
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
         _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - kAutoSize(300)) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
+        _circleSlider.maxRotationAngle = 270;
+//        _circleSlider.rigidDirection = YES;
         [_circleSlider addTarget:self
                           action:@selector(circleSliderTouchDown:)
                 forControlEvents:UIControlEventTouchDown];
@@ -83,8 +85,8 @@
     if (!_progressSlider) {
         _progressSlider = [[UISlider alloc] initWithFrame:CGRectMake(80, kScreenHeight - kAutoSize(60), kScreenWidth - 80 - 20, 30)];
         _progressSlider.backgroundColor = [UIColor clearColor];
-        _progressSlider.minimumValue = -0.5;
-        _progressSlider.maximumValue = 0.5;
+        _progressSlider.minimumValue = -self.circleSlider.maxRotationAngle/360;
+        _progressSlider.maximumValue = self.circleSlider.maxRotationAngle/360;
         _progressSlider.value = 0;
         _progressSlider.tag = 100;
         [_progressSlider addTarget:self

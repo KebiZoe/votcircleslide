@@ -30,12 +30,21 @@
 @property (nonatomic, assign, readonly) CGFloat circleRadius;        //圆形进度条的半径，默认比view的宽高中最小者还要小48,为了在圆外显示刻度
 
 @property (nonatomic, assign) CGFloat thumbRadius;          //滑块正常的半径
-///value的值在-0.5-0.5之间，负数为逆时针
+/// value = angle / 360;  -maxRotationAngle <= value <= maxRotationAngle;
+///maxRotationAngle = 180度时 value的值在-0.5-0.5之间，负数为逆时针
+/// value的值的范围取决于maxRotationAngle
 @property (nonatomic, assign) float value;                  //slider当前的value
 /// 设置旋转角度时的精度，默认为10度。四舍五入原则。
 @property(nonatomic, assign) CGFloat precision;
 /// loadProgress的在0-1之间，加载到1是位置和设定位置一样
 @property (nonatomic, assign) float loadProgress;           //slider加载的进度
+/// 最大旋转角度，默认180度
+@property (nonatomic, assign) float maxRotationAngle;
+/// 可否可以在切换旋转方向，默认可以(严格的方向 rigidDirection = NO)；
+/// 如果不是180度，页同意支持，切换的角度变为360-maxRotationAngle
+@property (nonatomic, assign) BOOL rigidDirection;
+/// 友情提示，当选择到最大位置时继续旋转则给出提示
+@property(nonatomic, copy, nullable) void (^BlockTips)(NSString* _Nonnull);
 - (void)resumeAnimation:(BOOL) anima;
 /// 吸附到最近精度值位置
 - (void)adsorbedToTheNearestscale;

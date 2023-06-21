@@ -36,9 +36,11 @@
 @property (nonatomic, assign) CGPoint circleStartPoint;
 /// 滑块转过的角度
 @property (nonatomic, assign) CGFloat angle;
+/// 保存上一次的角度，这个角度是用作计算顺逆时针用的
+@property(nonatomic, assign) CGFloat lastAngle;
 
 @end
-
+static const CGFloat k_tolerance = 15;
 @implementation VOTCircleSlider
 
 - (void)dealloc{
@@ -90,6 +92,9 @@
     self.degreeImgV.image = [self drawLineOfDashByImageView:self.degreeImgV];
     [self addSubview:self.degreeImgV];
     
+    self.maxRotationAngle = 180;
+    self.rigidDirection = NO;
+    
     CGFloat standardRadius = kScreenWidth/2-kAutoSize(61);
     CGFloat scale = self.circleRadius/standardRadius;
     self.arrowimgV = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2-kAutoSize(191)*scale/2, self.frame.size.height/2-self.circleRadius-kAutoSize(10), kAutoSize(191)*scale, kAutoSize(43)*scale)];
@@ -114,29 +119,19 @@
 }
 - (void)resumeAnimation:(BOOL) anima{
     CGFloat aniAngle;
-    // 如果是180度的时候动画的方向是不能确定的，必须小于180度是才能确定动画方向
-    if (self.loadProgress*self.value==0.5){
-        aniAngle = 2 * M_PI * 0.499;
-    }else if (self.loadProgress*self.value==-0.5){
-        aniAngle = -2 * M_PI * 0.499;
-    }else{
-        aniAngle = 2 * M_PI * self.loadProgress * self.value;
-    }
+    
+    aniAngle = 2 * M_PI * self.loadProgress * self.value;
     
     self.angle = 0;
     self.value = 0;
     self.loadProgress = 0;
     
     if (anima == YES){
-        self.transform = CGAffineTransformMakeRotation(aniAngle);
-        self.thumbView.hidden = YES;
-        self.showDegreeLbl.hidden = YES;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            self.thumbView.hidden = NO;
-            self.showDegreeLbl.hidden = NO;
-        }];
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.fromValue = [NSNumber numberWithFloat: aniAngle];
+        animation.toValue = 0;
+        animation.duration = 0.25;
+        [self.layer addAnimation:animation forKey:@"rotationAnimation"];
     }
 }
 #pragma mark - KVO
@@ -147,12 +142,16 @@
     }else{
         if(self.angle<0){
             self.thumbView.image = _thumbswipeLeftImage;
+            if(self.maxRotationAngle == 180 && self.rigidDirection == NO && self.angle == -180){
+                self.thumbView.image = _thumb180DImage;
+            }
         }else if(self.angle == 0){
             self.thumbView.image = _thumbDefaultImage;
-        }else if (self.angle >0&&self.angle<179){
-            self.thumbView.image = _thumbswipeRightImage;
         }else{
-            self.thumbView.image = _thumb180DImage;
+            self.thumbView.image = _thumbswipeRightImage;
+            if(self.maxRotationAngle == 180 && self.rigidDirection == NO && self.angle == 180){
+                self.thumbView.image = _thumb180DImage;
+            }
         }
     }
 }
@@ -286,17 +285,28 @@
     
     double alpha = self.value * 2 * M_PI;
     self.angle = self.value * 360;
-    if(self.angle<-179.5){
-        self.thumbView.image = _thumb180DImage;
-    }else if(self.angle <= -0.5){
-        self.thumbView.image = _thumbswipeLeftImage;
-    }else if(self.angle > -0.5&&self.angle < 0.5){
-        self.thumbView.image = _thumbDefaultImage;
-    }else if (self.angle >=0.5&&self.angle<179.5){
-        self.thumbView.image = _thumbswipeRightImage;
+    if(self.maxRotationAngle == 180 && self.rigidDirection == NO){
+        if(self.angle<-179.5){
+            self.thumbView.image = _thumb180DImage;
+        }else if(self.angle <= -0.5){
+            self.thumbView.image = _thumbswipeLeftImage;
+        }else if(self.angle > -0.5&&self.angle < 0.5){
+            self.thumbView.image = _thumbDefaultImage;
+        }else if (self.angle >=0.5&&self.angle<179.5){
+            self.thumbView.image = _thumbswipeRightImage;
+        }else{
+            self.thumbView.image = _thumb180DImage;
+        }
     }else{
-        self.thumbView.image = _thumb180DImage;
+        if(self.angle <= -0.5){
+            self.thumbView.image = _thumbswipeLeftImage;
+        }else if(self.angle > -0.5&&self.angle < 0.5){
+            self.thumbView.image = _thumbDefaultImage;
+        }else{
+            self.thumbView.image = _thumbswipeRightImage;
+        }
     }
+    
     double x = self.circleRadius * sin(alpha) + self.drawCenter.x;
     double y = -self.circleRadius * cos(alpha) + self.drawCenter.y;
     self.lastPoint = CGPointMake(x, y);
@@ -373,11 +383,11 @@
     [super beginTrackingWithTouch:touch withEvent:event];
     CGPoint starTouchPoint = [touch locationInView:self];
 
-    //如果点击点和上一次点击点的距离大于20，不做操作。
-//    double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
-//    if (touchDist > 20) {
-//        return NO;
-//    }
+    // 严格方向时如果点击点和上一次点击点的距离大于20，不做操作。
+    double touchDist = [VOTCircleSlider distanceBetweenPointA:starTouchPoint pointB:self.lastPoint];
+    if ((self.rigidDirection || self.maxRotationAngle != 180) && touchDist > 20) {
+        return NO;
+    }
     [self moveHandlerWithPoint:starTouchPoint];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
     return YES;
@@ -427,13 +437,198 @@
     }
     self.lastPoint = CGPointMake(xT, yT);
     
+    CGFloat angle = [self calculateAngle];
+    NSLog(@"%f",angle);
+    self.angle = angle;
+    
+    self.value = angle / 360;
+}
+/// 计算角度
+- (CGFloat)calculateAngle {
+    
     CGFloat angle = [VOTCircleSlider calculateAngleWithRadius:self.circleRadius
                                                      center:self.drawCenter
                                                 startCenter:self.circleStartPoint
                                                   endCenter:self.lastPoint];
-    self.angle = angle;
+    BOOL clockWise = NO;
+    /// 判断当下的选择方向
+    if((angle > self.lastAngle && (angle*self.lastAngle > 0 || (angle <= 90 && self.lastAngle > -90)))||(angle<-90&&self.lastAngle>=90)){
+        clockWise = YES;
+    }
+    self.lastAngle = angle;
     
-    self.value = angle / 360;
+    if (self.maxRotationAngle < 180){//最大旋转角度小于180度
+        if(self.rigidDirection){ // 方向严格
+            if(self.angle==self.maxRotationAngle){ // 顺时针
+                if(clockWise){ // 提示顺时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示顺时针不能再旋转了");
+                    }
+                    angle = self.maxRotationAngle;
+                }else{ // 逆时针旋转
+                    if(angle > self.maxRotationAngle || angle < self.maxRotationAngle - k_tolerance){
+                        angle = self.maxRotationAngle;
+                    }
+                }
+            }else if(self.angle>0){
+                if(clockWise){
+                    if(angle>self.maxRotationAngle || angle < 0){
+                        angle = self.maxRotationAngle;
+                    }
+                }
+            }else if(self.angle==0){
+                if(angle>self.maxRotationAngle){
+                    angle = self.maxRotationAngle;
+                }
+                if(angle<-self.maxRotationAngle){
+                    angle = -self.maxRotationAngle;
+                }
+            }else if(self.angle>-self.maxRotationAngle){
+                if(clockWise==NO){
+                    if(angle<-self.maxRotationAngle || angle > 0){
+                        angle = -self.maxRotationAngle;
+                    }
+                }
+            }else{
+                if(clockWise==NO){ // 提示逆时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示逆时针不能再旋转了");
+                    }
+                    angle = -self.maxRotationAngle;
+                }else{
+                    if(angle < -self.maxRotationAngle || angle > -self.maxRotationAngle + k_tolerance){
+                        angle = -self.maxRotationAngle;
+                    }
+                }
+            }
+        }else{ // 方向自由切换
+            if(ABS(angle) > self.maxRotationAngle){ // 旋转的角度大于最大角
+                angle = angle>0 ? self.maxRotationAngle : -self.maxRotationAngle;
+            }
+        }
+    }else if(self.maxRotationAngle == 180){//最大旋转角度等于180度
+        if(self.rigidDirection){ // 方向严格
+            if(self.angle==self.maxRotationAngle){ // 顺时针
+                if(clockWise){ // 提示顺时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示顺时针不能再旋转了");
+                    }
+                    angle = self.maxRotationAngle;
+                }else{
+                    if(angle < self.maxRotationAngle - k_tolerance){
+                        angle = self.maxRotationAngle;
+                    }
+                }
+            }else if(self.angle==-self.maxRotationAngle){
+                if(clockWise==NO){ // 提示逆时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示逆时针不能再旋转了");
+                    }
+                    angle = -self.maxRotationAngle;
+                }else{
+                    if(angle>-self.maxRotationAngle+k_tolerance){
+                        angle = -self.maxRotationAngle;
+                    }
+                }
+            }else {
+                if(self.angle>0&&clockWise&&angle<0){
+                    angle = 180;
+                }else if(self.angle<0&&clockWise==NO&&angle>0){
+                    angle = -180;
+                }
+            }
+        }
+    }else{//最大旋转角度>180度
+        if(self.rigidDirection){ // 方向严格
+            if(self.angle==self.maxRotationAngle){ // 顺时针
+                if(clockWise){ // 提示顺时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示顺时针不能再旋转了");
+                    }
+                    angle = self.maxRotationAngle;
+                }else{
+                    if(angle < 0){
+                        angle = 360+angle;
+                    }
+                    if(angle>self.maxRotationAngle||angle<self.maxRotationAngle-k_tolerance){
+                        angle = self.maxRotationAngle;
+                    }
+                }
+            }else if(self.angle>0){
+                if(clockWise){
+                    if(angle < 0){
+                        angle = 360+angle;
+                    }
+                    if(angle>self.maxRotationAngle||angle<self.angle-k_tolerance){
+                        angle = self.maxRotationAngle;
+                    }
+                }else{
+                    if(angle < 0 && self.angle>180){
+                        angle = 360+angle;
+                    }
+                }
+            }else if(self.angle==0){
+                
+            }else if(self.angle>-self.maxRotationAngle){
+                if(clockWise == NO){
+                    if(angle>0){
+                        angle = -360+angle;
+                    }
+                    if(angle<-self.maxRotationAngle||angle>self.angle+k_tolerance){
+                        angle = -self.maxRotationAngle;
+                    }
+                }else{
+                    if(angle > 0 && self.angle<-180){
+                        angle = -360+angle;
+                    }
+                }
+            }else{
+                if(clockWise==NO){ // 提示逆时针不能再旋转了
+                    if(self.BlockTips){
+                        self.BlockTips(@"提示逆时针不能再旋转了");
+                    }
+                    angle = -self.maxRotationAngle;
+                }else{
+                    if(angle > 0){
+                        angle = -360+angle;
+                    }
+                    if(angle<-self.maxRotationAngle||angle>-self.maxRotationAngle+k_tolerance){
+                        angle = -self.maxRotationAngle;
+                    }
+                }
+            }
+        }else{ // 方向自由切换
+            if(self.angle>0){
+                if(clockWise){
+                    if(angle<0){
+                        angle = 360+angle;
+                    }
+                    if(angle>self.maxRotationAngle){
+                        angle = -360+angle;
+                    }
+                }else{
+                    if(angle < 0 && self.angle>180){
+                        angle = 360+angle;
+                    }
+                }
+            }else if(self.angle<0){
+                if(clockWise==NO){
+                    if(angle>0){
+                        angle = -360+angle;
+                    }
+                    if(angle<-self.maxRotationAngle){
+                        angle = 360+angle;
+                    }
+                }else{
+                    if(angle > 0 && self.angle<-180){
+                        angle = -360+angle;
+                    }
+                }
+            }
+        }
+    }
+    
+    return angle;
 }
 // 吸附到最近精度值
 - (void)adsorbedToTheNearestscale {
@@ -441,6 +636,11 @@
         return;
     }
     self.angle = floor((self.angle + 0.5 * self.precision) / self.precision) * self.precision;
+    if(self.angle>self.maxRotationAngle){
+        self.angle -= self.precision;
+    }else if(self.angle<-self.maxRotationAngle){
+        self.angle += self.precision;
+    }
     self.value = self.angle/360;
     
     double alpha = _value * 2 * M_PI;
