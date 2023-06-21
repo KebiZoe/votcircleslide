@@ -38,7 +38,10 @@
 @property (nonatomic, assign) CGFloat angle;
 /// 保存上一次的角度，这个角度是用作计算顺逆时针用的
 @property(nonatomic, assign) CGFloat lastAngle;
-
+///防抖中
+@property(nonatomic, assign) BOOL debouncing;
+///当前弹窗内容
+@property(nonatomic, strong) NSString *curTips;
 @end
 static const CGFloat k_tolerance = 15;
 @implementation VOTCircleSlider
@@ -461,7 +464,11 @@ static const CGFloat k_tolerance = 15;
         if(self.rigidDirection){ // 方向严格
             if(self.angle==self.maxRotationAngle){ // 顺时针
                 if(clockWise){ // 提示顺时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示逆时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示顺时针不能再旋转了");
                     }
                     angle = self.maxRotationAngle;
@@ -491,7 +498,11 @@ static const CGFloat k_tolerance = 15;
                 }
             }else{
                 if(clockWise==NO){ // 提示逆时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示顺时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示逆时针不能再旋转了");
                     }
                     angle = -self.maxRotationAngle;
@@ -510,7 +521,11 @@ static const CGFloat k_tolerance = 15;
         if(self.rigidDirection){ // 方向严格
             if(self.angle==self.maxRotationAngle){ // 顺时针
                 if(clockWise){ // 提示顺时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示逆时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示顺时针不能再旋转了");
                     }
                     angle = self.maxRotationAngle;
@@ -521,7 +536,11 @@ static const CGFloat k_tolerance = 15;
                 }
             }else if(self.angle==-self.maxRotationAngle){
                 if(clockWise==NO){ // 提示逆时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示顺时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示逆时针不能再旋转了");
                     }
                     angle = -self.maxRotationAngle;
@@ -542,7 +561,11 @@ static const CGFloat k_tolerance = 15;
         if(self.rigidDirection){ // 方向严格
             if(self.angle==self.maxRotationAngle){ // 顺时针
                 if(clockWise){ // 提示顺时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示逆时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示顺时针不能再旋转了");
                     }
                     angle = self.maxRotationAngle;
@@ -584,7 +607,11 @@ static const CGFloat k_tolerance = 15;
                 }
             }else{
                 if(clockWise==NO){ // 提示逆时针不能再旋转了
-                    if(self.BlockTips){
+                    if(self.BlockTips && (self.debouncing == NO || [self.curTips isEqual:@"提示顺时针不能再旋转了"])){
+                        self.debouncing = YES;
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.debouncing = NO;
+                        });
                         self.BlockTips(@"提示逆时针不能再旋转了");
                     }
                     angle = -self.maxRotationAngle;
