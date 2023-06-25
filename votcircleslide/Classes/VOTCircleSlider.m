@@ -441,7 +441,7 @@ static const CGFloat k_tolerance = 15;
     self.lastPoint = CGPointMake(xT, yT);
     
     CGFloat angle = [self calculateAngle];
-    NSLog(@"%f",angle);
+    
     self.angle = angle;
     
     self.value = angle / 360;

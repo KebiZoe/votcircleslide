@@ -49,7 +49,10 @@
     if (!_circleSlider) {
         _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - kAutoSize(300)) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
         _circleSlider.maxRotationAngle = 270;
-//        _circleSlider.rigidDirection = YES;
+        _circleSlider.rigidDirection = YES;
+        _circleSlider.BlockTips = ^(NSString * tips) {
+            NSLog(@"%@",tips);
+        };
         [_circleSlider addTarget:self
                           action:@selector(circleSliderTouchDown:)
                 forControlEvents:UIControlEventTouchDown];
