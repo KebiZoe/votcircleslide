@@ -48,8 +48,8 @@
 - (VOTCircleSlider *)circleSlider {
     if (!_circleSlider) {
         _circleSlider = [[VOTCircleSlider alloc] initWithFrame:CGRectMake(kAutoSize(13), (kScreenHeight - kAutoSize(300)) / 2.0, kScreenWidth-kAutoSize(26), kScreenWidth-kAutoSize(26))];
-        _circleSlider.maxRotationAngle = 270;
-        _circleSlider.rigidDirection = YES;
+        _circleSlider.maxRotationAngle = self.angle;
+        _circleSlider.rigidDirection = self.rigidDirection;
         _circleSlider.BlockTips = ^(NSString * tips) {
             NSLog(@"%@",tips);
         };

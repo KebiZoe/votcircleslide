@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
 这是一个用于原地转向的环形滑块，可设置旋转角度，和已加载角度。左右可旋转0-180度
                        DESC
 
-  s.homepage         = 'http://10.54.147.91:5580/s.zengxiangxian/votcircleslide'
+  s.homepage         = 'https://github.com/KebiZoe/votcircleslide'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 's.zengxiangxian' => 's.zengxiangxian@byd.com' }
-  s.source           = { :git => 'http://10.54.147.91:5580/s.zengxiangxian/votcircleslide.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/KebiZoe/votcircleslide.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
 

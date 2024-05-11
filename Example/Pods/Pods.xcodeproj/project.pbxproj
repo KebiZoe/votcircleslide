@@ -7,99 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02BE34CD45F150E545D16DA0E861D91B /* ic_vot_car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */; };
-		030F985278E87023A88FA42E87F2F9F9 /* ic_vot_thumb_swipeLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */; };
-		09C852080476B92F8ACDB2A2DBB12E69 /* ic_vot_thumb_goal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */; };
-		11DC6B00338D27B5ED4D53D46DBA07B5 /* Pods-votcircleslide_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A94AABE811C0D55CB1234835A33D7AA /* Pods-votcircleslide_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E21B0E717E6C47529D69A9503DBBF1A /* votcircleslide.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF422EED12A4F8A1BF5339E060014124 /* votcircleslide.bundle */; };
-		23D13D3F92CEDC5A580EBD60E645B998 /* Pods-votcircleslide_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0297B3668C3FE8FB54D861762BE6B616 /* Pods-votcircleslide_Example-dummy.m */; };
-		574A0ED4C1C6CF0A07D339685500A6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		5E2AC48A0F2CE8A611848324DB2C699B /* VOTCircleSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EEF11B6BA71A6B77F22E9CFEAFCEDAE /* votcircleslide-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A5D0FDC8EBA775BCF247A0A1E485988 /* ic_vot_virtualcar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */; };
-		905EF6147CD7516A560C389671CB7A26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		92762736FA34270A84640A409E8B5777 /* Pods-votcircleslide_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DEE64321BD0BC303F4B7B1FC0B6788 /* Pods-votcircleslide_Tests-dummy.m */; };
-		9563923BD56ED090B4338F8F4EB95302 /* ic_vot_thumb_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */; };
-		959BEEB71653096ABA9B8C511F41A2B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		A47D64983FB4E83AC41048E7906887ED /* votcircleslide-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */; };
-		AE68713CB29DC5EEB15D3A69B35F2F27 /* Pods-votcircleslide_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09FD623D608C3BCB72F8E8C2A05AAF33 /* Pods-votcircleslide_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D657B2E46097EB2408F512111B459F36 /* ic_vot_thumb_180D@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */; };
-		D6B745A1804133943D0066F8A4B5D033 /* VOTCircleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */; };
-		EEFDE83BD04C5A43258BEA68D72E526A /* ic_vot_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */; };
-		F51405BAC7D6ED94981B208CA271E5A2 /* ic_vot_thumb_swipeRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */; };
-		F94EE0C3E679105A5CC7A3EF67B77FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		501BAE4E3E40DF08C651BF73F2F19403 /* Pods-votcircleslide_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BED03C09192D2BCE25FA76F75A2E6B /* Pods-votcircleslide_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92762736FA34270A84640A409E8B5777 /* Pods-votcircleslide_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD40F210949970A1AC4BBB65952386D /* Pods-votcircleslide_Tests-dummy.m */; };
+		959BEEB71653096ABA9B8C511F41A2B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		AE68713CB29DC5EEB15D3A69B35F2F27 /* Pods-votcircleslide_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F183CED0DC5EC17652ADA1B4E30FEE /* Pods-votcircleslide_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB3E8A1834891B312B3678E92EDF6068 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F675EA90718A8306DF0B075804F009A0 /* Pods-votcircleslide_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA9FCE213347590B737783A2C46658 /* Pods-votcircleslide_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		16E61243780EAFEA978F50515C6A06AF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 640040012B99C27E814AF86C57556839;
-			remoteInfo = "votcircleslide-votcircleslide";
-		};
-		AF6BE361463BDAE8CB9DDB5201C09628 /* PBXContainerItemProxy */ = {
+		920937307CF61DFDD291861257AEDBE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 383E654C82FF7DF19BF56DB87BFD7D77;
 			remoteInfo = "Pods-votcircleslide_Example";
 		};
-		CF273E0FD76F3DAFC8B085C04BD76967 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A38E8F41604A2D40583FF119FFC6FE42;
-			remoteInfo = votcircleslide;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0297B3668C3FE8FB54D861762BE6B616 /* Pods-votcircleslide_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Example-dummy.m"; sourceTree = "<group>"; };
-		0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.debug.xcconfig; sourceTree = "<group>"; };
-		04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VOTCircleSlider.h; path = votcircleslide/Classes/VOTCircleSlider.h; sourceTree = "<group>"; };
-		09FD623D608C3BCB72F8E8C2A05AAF33 /* Pods-votcircleslide_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Tests-umbrella.h"; sourceTree = "<group>"; };
-		14F5F90CDFC08561D91AC0708EF67B38 /* Pods_votcircleslide_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_votcircleslide_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15DE5B17EB97AE14FFA2D21E9BA97637 /* Pods-votcircleslide_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1D3327D254B415A58863308ABF43A3D7 /* Pods-votcircleslide_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-votcircleslide_Example-frameworks.sh"; sourceTree = "<group>"; };
-		2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VOTCircleSlider.m; path = votcircleslide/Classes/VOTCircleSlider.m; sourceTree = "<group>"; };
-		236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_virtualcar@3x.png"; path = "votcircleslide/Assets/ic_vot_virtualcar@3x.png"; sourceTree = "<group>"; };
-		28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "votcircleslide-dummy.m"; sourceTree = "<group>"; };
-		2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_default@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_default@3x.png"; sourceTree = "<group>"; };
-		2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_180D@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_180D@3x.png"; sourceTree = "<group>"; };
-		30A924C1DEF558C105B7C1FE27931832 /* Pods-votcircleslide_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = votcircleslide.release.xcconfig; sourceTree = "<group>"; };
-		45FB4A49B3740D40027A28A81FEBB101 /* votcircleslide.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = votcircleslide.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		497F9FFDCA1D384365BAE8F6612A1449 /* Pods-votcircleslide_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_car@3x.png"; path = "votcircleslide/Assets/ic_vot_car@3x.png"; sourceTree = "<group>"; };
-		60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeRight@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeRight@3x.png"; sourceTree = "<group>"; };
-		6A94AABE811C0D55CB1234835A33D7AA /* Pods-votcircleslide_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Example-umbrella.h"; sourceTree = "<group>"; };
-		70BE90086F167A086EA5FE7530B856F3 /* Pods-votcircleslide_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-Info.plist"; sourceTree = "<group>"; };
-		780E7D71DAC2B49B19F54D33013545A1 /* Pods-votcircleslide_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		84D292E62EF3326D40B9899C299462E2 /* Pods_votcircleslide_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_votcircleslide_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		868AD2AE8BCFF01EC21DB7E1079A46AA /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-votcircleslide-votcircleslide-Info.plist"; sourceTree = "<group>"; };
-		8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_arrow@3x.png"; path = "votcircleslide/Assets/ic_vot_arrow@3x.png"; sourceTree = "<group>"; };
-		94BDADF91CC00921D87DBB4F0409B137 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		985D7DD1B8C6789F893A09E887ACF404 /* votcircleslide-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "votcircleslide-Info.plist"; sourceTree = "<group>"; };
-		9AEF409D96A17B52B6E716D7F53F2145 /* Pods-votcircleslide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A67351AB2F079CD13BC074A1C872330B /* votcircleslide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = votcircleslide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAD1242CF05BFF43273948BA33378EA3 /* Pods-votcircleslide_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-Info.plist"; sourceTree = "<group>"; };
-		AEAA61572B73E1D5313B135D156E6B27 /* Pods-votcircleslide_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Tests.modulemap"; sourceTree = "<group>"; };
-		AF3050050E17C85718C501C64ABDD272 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B22702FAC7D6FDC871F67268E2E39AE9 /* Pods-votcircleslide_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B950BEAAC36FDFAE30275DEB5D99480F /* Pods-votcircleslide_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_goal@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_goal@3x.png"; sourceTree = "<group>"; };
-		C4A33C0BA8FD048AD36A58FA348023C9 /* votcircleslide-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-prefix.pch"; sourceTree = "<group>"; };
-		C9DEE64321BD0BC303F4B7B1FC0B6788 /* Pods-votcircleslide_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Tests-dummy.m"; sourceTree = "<group>"; };
-		CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "votcircleslide-umbrella.h"; sourceTree = "<group>"; };
-		CF422EED12A4F8A1BF5339E060014124 /* votcircleslide.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = votcircleslide.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		DBA50A52F949CFC0975037855AA105F4 /* Pods-votcircleslide_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Example.modulemap"; sourceTree = "<group>"; };
-		DE4FDFBB247B590D104F4E1546B4943C /* votcircleslide.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = votcircleslide.modulemap; sourceTree = "<group>"; };
-		DEC9B6EE111A3576E881F4A734CEEEAE /* Pods-votcircleslide_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "ic_vot_thumb_swipeLeft@3x.png"; path = "votcircleslide/Assets/ic_vot_thumb_swipeLeft@3x.png"; sourceTree = "<group>"; };
-		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		03F4DD19F4FDB5C03CB72FB4675A0578 /* Pods-votcircleslide_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Tests.modulemap"; sourceTree = "<group>"; };
+		07E050F56EC8717E3CFC43900096DF24 /* Pods-votcircleslide_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.release.xcconfig"; sourceTree = "<group>"; };
+		14B55AB95E9ABF22CACF3BDD67A31096 /* Pods-votcircleslide_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		14F5F90CDFC08561D91AC0708EF67B38 /* Pods-votcircleslide_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-votcircleslide_Tests"; path = Pods_votcircleslide_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BED03C09192D2BCE25FA76F75A2E6B /* Pods-votcircleslide_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Example-umbrella.h"; sourceTree = "<group>"; };
+		237A20360A08D76D44F498164A8753E5 /* Pods-votcircleslide_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-Info.plist"; sourceTree = "<group>"; };
+		25300FFC896D9D865B3816446DEF4BD6 /* Pods-votcircleslide_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		3DD40F210949970A1AC4BBB65952386D /* Pods-votcircleslide_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Tests-dummy.m"; sourceTree = "<group>"; };
+		41C518B0B63E30D3BE892A499BD3C5DF /* Pods-votcircleslide_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-votcircleslide_Example.modulemap"; sourceTree = "<group>"; };
+		5DED8E773F47B131568D56C2A6A6E8AC /* Pods-votcircleslide_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		61EA1CE03EFDCD86E1E3B304A3E23A78 /* Pods-votcircleslide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		716473AA0ED3B420E712F131B0A78F72 /* Pods-votcircleslide_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-votcircleslide_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		82FC1CFF71B8485A23E72A8B9754095B /* Pods-votcircleslide_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		84D292E62EF3326D40B9899C299462E2 /* Pods-votcircleslide_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-votcircleslide_Example"; path = Pods_votcircleslide_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B66D046833BE8DA5DCB5AD69CC50AA2E /* Pods-votcircleslide_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-votcircleslide_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BC362E8D53E07F1F4856CAF51449E68B /* Pods-votcircleslide_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-votcircleslide_Example-Info.plist"; sourceTree = "<group>"; };
+		E5F183CED0DC5EC17652ADA1B4E30FEE /* Pods-votcircleslide_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-votcircleslide_Tests-umbrella.h"; sourceTree = "<group>"; };
+		F0EA9FCE213347590B737783A2C46658 /* Pods-votcircleslide_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-votcircleslide_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,180 +57,96 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8ACFB0AA74311E7CDB080404D5A2AB13 /* Frameworks */ = {
+		6964834073C1D97690923A1C670497C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				905EF6147CD7516A560C389671CB7A26 /* Foundation.framework in Frameworks */,
-				F94EE0C3E679105A5CC7A3EF67B77FD5 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0B6FDFD543D0EBC0F784769959532B3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F846E459879D5AD8F20A2063D213C9B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				574A0ED4C1C6CF0A07D339685500A6F7 /* Foundation.framework in Frameworks */,
+				BB3E8A1834891B312B3678E92EDF6068 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B3191B6AFD3464C61A137A1E0E2E316 /* Products */ = {
+		03D75E21130E7EF73BF44E192EC72EBC /* Pods-votcircleslide_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				84D292E62EF3326D40B9899C299462E2 /* Pods_votcircleslide_Example.framework */,
-				14F5F90CDFC08561D91AC0708EF67B38 /* Pods_votcircleslide_Tests.framework */,
-				A67351AB2F079CD13BC074A1C872330B /* votcircleslide.framework */,
-				CF422EED12A4F8A1BF5339E060014124 /* votcircleslide.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		191B1B1F00695AF94C5F60252822566F /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				94BDADF91CC00921D87DBB4F0409B137 /* LICENSE */,
-				AF3050050E17C85718C501C64ABDD272 /* README.md */,
-				45FB4A49B3740D40027A28A81FEBB101 /* votcircleslide.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		4A2F9AC7ED944CF36BA71AA435FC6437 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				868AD2AE8BCFF01EC21DB7E1079A46AA /* ResourceBundle-votcircleslide-votcircleslide-Info.plist */,
-				DE4FDFBB247B590D104F4E1546B4943C /* votcircleslide.modulemap */,
-				28F8A14DFFC0C22D04A3A48FB4ED7D24 /* votcircleslide-dummy.m */,
-				985D7DD1B8C6789F893A09E887ACF404 /* votcircleslide-Info.plist */,
-				C4A33C0BA8FD048AD36A58FA348023C9 /* votcircleslide-prefix.pch */,
-				CD66B4E7F23C1F12E4B2ADD6AEFB4A35 /* votcircleslide-umbrella.h */,
-				0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */,
-				3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/votcircleslide";
-			sourceTree = "<group>";
-		};
-		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
-				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		6020092C0D7A587B9EAED27995D9B495 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C27FF4D97FC71C6D4F4C681140E38386 /* Pods-votcircleslide_Example */,
-				89D67030F5A1AE024C7594E29E59A52D /* Pods-votcircleslide_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		89D67030F5A1AE024C7594E29E59A52D /* Pods-votcircleslide_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				AEAA61572B73E1D5313B135D156E6B27 /* Pods-votcircleslide_Tests.modulemap */,
-				497F9FFDCA1D384365BAE8F6612A1449 /* Pods-votcircleslide_Tests-acknowledgements.markdown */,
-				B950BEAAC36FDFAE30275DEB5D99480F /* Pods-votcircleslide_Tests-acknowledgements.plist */,
-				C9DEE64321BD0BC303F4B7B1FC0B6788 /* Pods-votcircleslide_Tests-dummy.m */,
-				AAD1242CF05BFF43273948BA33378EA3 /* Pods-votcircleslide_Tests-Info.plist */,
-				09FD623D608C3BCB72F8E8C2A05AAF33 /* Pods-votcircleslide_Tests-umbrella.h */,
-				9AEF409D96A17B52B6E716D7F53F2145 /* Pods-votcircleslide_Tests.debug.xcconfig */,
-				30A924C1DEF558C105B7C1FE27931832 /* Pods-votcircleslide_Tests.release.xcconfig */,
+				03F4DD19F4FDB5C03CB72FB4675A0578 /* Pods-votcircleslide_Tests.modulemap */,
+				716473AA0ED3B420E712F131B0A78F72 /* Pods-votcircleslide_Tests-acknowledgements.markdown */,
+				82FC1CFF71B8485A23E72A8B9754095B /* Pods-votcircleslide_Tests-acknowledgements.plist */,
+				3DD40F210949970A1AC4BBB65952386D /* Pods-votcircleslide_Tests-dummy.m */,
+				237A20360A08D76D44F498164A8753E5 /* Pods-votcircleslide_Tests-Info.plist */,
+				E5F183CED0DC5EC17652ADA1B4E30FEE /* Pods-votcircleslide_Tests-umbrella.h */,
+				61EA1CE03EFDCD86E1E3B304A3E23A78 /* Pods-votcircleslide_Tests.debug.xcconfig */,
+				5DED8E773F47B131568D56C2A6A6E8AC /* Pods-votcircleslide_Tests.release.xcconfig */,
 			);
 			name = "Pods-votcircleslide_Tests";
 			path = "Target Support Files/Pods-votcircleslide_Tests";
 			sourceTree = "<group>";
 		};
-		9945C6A95EBBA4CFA82B209B46146E38 /* votcircleslide */ = {
+		34FF50DFAD883B30CD5E8B25774A5E58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8AC776D64F5D5D23CC2231EADE652795 /* ic_vot_arrow@3x.png */,
-				5E3600A26A00BDD46F09E918402373BE /* ic_vot_car@3x.png */,
-				2D93C1D45E142A892670B59ED14309F7 /* ic_vot_thumb_180D@3x.png */,
-				2942F5D279D8EC27E1EBEC333FB3E6C0 /* ic_vot_thumb_default@3x.png */,
-				BB73447FC4760B5186C42B48DD6AB9FB /* ic_vot_thumb_goal@3x.png */,
-				E580BD520679CAC9A202E518AF55F8E4 /* ic_vot_thumb_swipeLeft@3x.png */,
-				60A82CE0D742B199048C2B0F017E14CC /* ic_vot_thumb_swipeRight@3x.png */,
-				236F65285CCDD388DC4288D139A9214B /* ic_vot_virtualcar@3x.png */,
-				04AFDB328004D4ADA8C490F90F5CFED6 /* VOTCircleSlider.h */,
-				2237A3C0BAB6C418B6640DD609E7C7AE /* VOTCircleSlider.m */,
-				191B1B1F00695AF94C5F60252822566F /* Pod */,
-				4A2F9AC7ED944CF36BA71AA435FC6437 /* Support Files */,
+				84D292E62EF3326D40B9899C299462E2 /* Pods-votcircleslide_Example */,
+				14F5F90CDFC08561D91AC0708EF67B38 /* Pods-votcircleslide_Tests */,
 			);
-			name = votcircleslide;
-			path = ../..;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		C27FF4D97FC71C6D4F4C681140E38386 /* Pods-votcircleslide_Example */ = {
+		4DBBDE8F0BF90BC8FB38CA69E50EB19C /* Pods-votcircleslide_Example */ = {
 			isa = PBXGroup;
 			children = (
-				DBA50A52F949CFC0975037855AA105F4 /* Pods-votcircleslide_Example.modulemap */,
-				DEC9B6EE111A3576E881F4A734CEEEAE /* Pods-votcircleslide_Example-acknowledgements.markdown */,
-				15DE5B17EB97AE14FFA2D21E9BA97637 /* Pods-votcircleslide_Example-acknowledgements.plist */,
-				0297B3668C3FE8FB54D861762BE6B616 /* Pods-votcircleslide_Example-dummy.m */,
-				1D3327D254B415A58863308ABF43A3D7 /* Pods-votcircleslide_Example-frameworks.sh */,
-				70BE90086F167A086EA5FE7530B856F3 /* Pods-votcircleslide_Example-Info.plist */,
-				6A94AABE811C0D55CB1234835A33D7AA /* Pods-votcircleslide_Example-umbrella.h */,
-				780E7D71DAC2B49B19F54D33013545A1 /* Pods-votcircleslide_Example.debug.xcconfig */,
-				B22702FAC7D6FDC871F67268E2E39AE9 /* Pods-votcircleslide_Example.release.xcconfig */,
+				41C518B0B63E30D3BE892A499BD3C5DF /* Pods-votcircleslide_Example.modulemap */,
+				14B55AB95E9ABF22CACF3BDD67A31096 /* Pods-votcircleslide_Example-acknowledgements.markdown */,
+				25300FFC896D9D865B3816446DEF4BD6 /* Pods-votcircleslide_Example-acknowledgements.plist */,
+				F0EA9FCE213347590B737783A2C46658 /* Pods-votcircleslide_Example-dummy.m */,
+				BC362E8D53E07F1F4856CAF51449E68B /* Pods-votcircleslide_Example-Info.plist */,
+				18BED03C09192D2BCE25FA76F75A2E6B /* Pods-votcircleslide_Example-umbrella.h */,
+				B66D046833BE8DA5DCB5AD69CC50AA2E /* Pods-votcircleslide_Example.debug.xcconfig */,
+				07E050F56EC8717E3CFC43900096DF24 /* Pods-votcircleslide_Example.release.xcconfig */,
 			);
 			name = "Pods-votcircleslide_Example";
 			path = "Target Support Files/Pods-votcircleslide_Example";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BC704D3D28FD124008C0520A883D3994 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DBBDE8F0BF90BC8FB38CA69E50EB19C /* Pods-votcircleslide_Example */,
+				03D75E21130E7EF73BF44E192EC72EBC /* Pods-votcircleslide_Tests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				F55E20E98A32BC2EFCFFB3109B2E6B6D /* Development Pods */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				0B3191B6AFD3464C61A137A1E0E2E316 /* Products */,
-				6020092C0D7A587B9EAED27995D9B495 /* Targets Support Files */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				34FF50DFAD883B30CD5E8B25774A5E58 /* Products */,
+				BC704D3D28FD124008C0520A883D3994 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		F55E20E98A32BC2EFCFFB3109B2E6B6D /* Development Pods */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9945C6A95EBBA4CFA82B209B46146E38 /* votcircleslide */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
-			name = "Development Pods";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		18D18E0B53B578D227887B70E52F020F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EEF11B6BA71A6B77F22E9CFEAFCEDAE /* votcircleslide-umbrella.h in Headers */,
-				5E2AC48A0F2CE8A611848324DB2C699B /* VOTCircleSlider.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		26EDEE62BB5433308B929A1BD550C5B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,11 +155,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB53BCCFEA26116E5C26B40D7FFD0049 /* Headers */ = {
+		66387B95F116D7F68C6925BEA6C928D8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11DC6B00338D27B5ED4D53D46DBA07B5 /* Pods-votcircleslide_Example-umbrella.h in Headers */,
+				501BAE4E3E40DF08C651BF73F2F19403 /* Pods-votcircleslide_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,21 +168,20 @@
 /* Begin PBXNativeTarget section */
 		383E654C82FF7DF19BF56DB87BFD7D77 /* Pods-votcircleslide_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E58569E3D8D8760787BE367749FA76DD /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Example" */;
+			buildConfigurationList = 4BEB630DDB9B2927A8D04D8522B51CB2 /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Example" */;
 			buildPhases = (
-				AB53BCCFEA26116E5C26B40D7FFD0049 /* Headers */,
-				5F7535B59F3D7361AD786CB1C59113A7 /* Sources */,
-				F846E459879D5AD8F20A2063D213C9B1 /* Frameworks */,
-				E4212CCDB4D1583C71B4ED428438C184 /* Resources */,
+				66387B95F116D7F68C6925BEA6C928D8 /* Headers */,
+				A666449AB37F58C765DCC2725FDA7C24 /* Sources */,
+				6964834073C1D97690923A1C670497C4 /* Frameworks */,
+				A487D7B1CB0F57773D0727413FC9EA3D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7641A0D54F25CD5B1B85862530B120D3 /* PBXTargetDependency */,
 			);
 			name = "Pods-votcircleslide_Example";
 			productName = Pods_votcircleslide_Example;
-			productReference = 84D292E62EF3326D40B9899C299462E2 /* Pods_votcircleslide_Example.framework */;
+			productReference = 84D292E62EF3326D40B9899C299462E2 /* Pods-votcircleslide_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 		56C50C6DC1ECE05D4ECBD2149D4E1E28 /* Pods-votcircleslide_Tests */ = {
@@ -335,47 +196,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF95CFA20A19756610D28565C7E5C7F6 /* PBXTargetDependency */,
+				9DEC77BB756D1E9DA156272CF21359A1 /* PBXTargetDependency */,
 			);
 			name = "Pods-votcircleslide_Tests";
 			productName = Pods_votcircleslide_Tests;
-			productReference = 14F5F90CDFC08561D91AC0708EF67B38 /* Pods_votcircleslide_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 10F50CFE8DAF5A8D4DC8453F4B497903 /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */;
-			buildPhases = (
-				B991907E542A4AEB896A3B7F749D5392 /* Sources */,
-				E0B6FDFD543D0EBC0F784769959532B3 /* Frameworks */,
-				DD1E0DFBD10FDD1114AB525142F6FA43 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "votcircleslide-votcircleslide";
-			productName = votcircleslide;
-			productReference = CF422EED12A4F8A1BF5339E060014124 /* votcircleslide.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		A38E8F41604A2D40583FF119FFC6FE42 /* votcircleslide */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C98699E58720D3DB11500E979E78D40E /* Build configuration list for PBXNativeTarget "votcircleslide" */;
-			buildPhases = (
-				18D18E0B53B578D227887B70E52F020F /* Headers */,
-				45E7609877186B636E595E9738C32D49 /* Sources */,
-				8ACFB0AA74311E7CDB080404D5A2AB13 /* Frameworks */,
-				AF8C7BC726DF94558D7D18B0A214D52A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ECB91B2C51B41DEA154199CE0EA30E7F /* PBXTargetDependency */,
-			);
-			name = votcircleslide;
-			productName = votcircleslide;
-			productReference = A67351AB2F079CD13BC074A1C872330B /* votcircleslide.framework */;
+			productReference = 14F5F90CDFC08561D91AC0708EF67B38 /* Pods-votcircleslide_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -384,13 +209,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1420;
-				TargetAttributes = {
-					640040012B99C27E814AF86C57556839 = {
-						DevelopmentTeam = J94G9VA7P2;
-					};
-				};
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -401,24 +221,21 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 0B3191B6AFD3464C61A137A1E0E2E316 /* Products */;
+			productRefGroup = 34FF50DFAD883B30CD5E8B25774A5E58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				383E654C82FF7DF19BF56DB87BFD7D77 /* Pods-votcircleslide_Example */,
 				56C50C6DC1ECE05D4ECBD2149D4E1E28 /* Pods-votcircleslide_Tests */,
-				A38E8F41604A2D40583FF119FFC6FE42 /* votcircleslide */,
-				640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF8C7BC726DF94558D7D18B0A214D52A /* Resources */ = {
+		A487D7B1CB0F57773D0727413FC9EA3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E21B0E717E6C47529D69A9503DBBF1A /* votcircleslide.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,52 +246,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD1E0DFBD10FDD1114AB525142F6FA43 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEFDE83BD04C5A43258BEA68D72E526A /* ic_vot_arrow@3x.png in Resources */,
-				02BE34CD45F150E545D16DA0E861D91B /* ic_vot_car@3x.png in Resources */,
-				D657B2E46097EB2408F512111B459F36 /* ic_vot_thumb_180D@3x.png in Resources */,
-				9563923BD56ED090B4338F8F4EB95302 /* ic_vot_thumb_default@3x.png in Resources */,
-				09C852080476B92F8ACDB2A2DBB12E69 /* ic_vot_thumb_goal@3x.png in Resources */,
-				030F985278E87023A88FA42E87F2F9F9 /* ic_vot_thumb_swipeLeft@3x.png in Resources */,
-				F51405BAC7D6ED94981B208CA271E5A2 /* ic_vot_thumb_swipeRight@3x.png in Resources */,
-				8A5D0FDC8EBA775BCF247A0A1E485988 /* ic_vot_virtualcar@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4212CCDB4D1583C71B4ED428438C184 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		45E7609877186B636E595E9738C32D49 /* Sources */ = {
+		A666449AB37F58C765DCC2725FDA7C24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A47D64983FB4E83AC41048E7906887ED /* votcircleslide-dummy.m in Sources */,
-				D6B745A1804133943D0066F8A4B5D033 /* VOTCircleSlider.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5F7535B59F3D7361AD786CB1C59113A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				23D13D3F92CEDC5A580EBD60E645B998 /* Pods-votcircleslide_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B991907E542A4AEB896A3B7F749D5392 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F675EA90718A8306DF0B075804F009A0 /* Pods-votcircleslide_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,66 +268,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7641A0D54F25CD5B1B85862530B120D3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = votcircleslide;
-			target = A38E8F41604A2D40583FF119FFC6FE42 /* votcircleslide */;
-			targetProxy = CF273E0FD76F3DAFC8B085C04BD76967 /* PBXContainerItemProxy */;
-		};
-		ECB91B2C51B41DEA154199CE0EA30E7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "votcircleslide-votcircleslide";
-			target = 640040012B99C27E814AF86C57556839 /* votcircleslide-votcircleslide */;
-			targetProxy = 16E61243780EAFEA978F50515C6A06AF /* PBXContainerItemProxy */;
-		};
-		FF95CFA20A19756610D28565C7E5C7F6 /* PBXTargetDependency */ = {
+		9DEC77BB756D1E9DA156272CF21359A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-votcircleslide_Example";
 			target = 383E654C82FF7DF19BF56DB87BFD7D77 /* Pods-votcircleslide_Example */;
-			targetProxy = AF6BE361463BDAE8CB9DDB5201C09628 /* PBXContainerItemProxy */;
+			targetProxy = 920937307CF61DFDD291861257AEDBE2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1E1AD9BC25059C21812DB8C9EAEBCA6C /* Release */ = {
+		2AF326EDDA374F57D1EF081745DE0400 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B22702FAC7D6FDC871F67268E2E39AE9 /* Pods-votcircleslide_Example.release.xcconfig */;
+			baseConfigurationReference = 5DED8E773F47B131568D56C2A6A6E8AC /* Pods-votcircleslide_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2AF179B8CF4CBA2970DCD8E5792D4000 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30A924C1DEF558C105B7C1FE27931832 /* Pods-votcircleslide_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -560,7 +294,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.modulemap";
@@ -578,75 +312,12 @@
 			};
 			name = Release;
 		};
-		49E6197AEA562BB6D70116948D50F4B2 /* Debug */ = {
+		33A0C8A0E82BD8358E4D2918D46E56E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AEF409D96A17B52B6E716D7F53F2145 /* Pods-votcircleslide_Tests.debug.xcconfig */;
+			baseConfigurationReference = 07E050F56EC8717E3CFC43900096DF24 /* Pods-votcircleslide_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		55D90C868D530CC1778752A128D1C453 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/votcircleslide/votcircleslide-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/votcircleslide/votcircleslide-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/votcircleslide/votcircleslide.modulemap";
-				PRODUCT_MODULE_NAME = votcircleslide;
-				PRODUCT_NAME = votcircleslide;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		792DF97B6BD56C809492051F3B791A6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 780E7D71DAC2B49B19F54D33013545A1 /* Pods-votcircleslide_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -658,7 +329,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.modulemap";
@@ -670,12 +341,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -710,7 +382,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -731,16 +402,20 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		AB156838BDB6CA58767B4BAA8F9398E7 /* Debug */ = {
+		ABDA3D371924B919F917178D1DCD81D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */;
+			baseConfigurationReference = 61EA1CE03EFDCD86E1E3B304A3E23A78 /* Pods-votcircleslide_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -749,61 +424,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/votcircleslide/votcircleslide-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/votcircleslide/votcircleslide-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/votcircleslide/votcircleslide.modulemap";
-				PRODUCT_MODULE_NAME = votcircleslide;
-				PRODUCT_NAME = votcircleslide;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		ACD035CD45810CA12521A2B92B778EF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0471F7D5F6B8451E72251250FE562D54 /* votcircleslide.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/votcircleslide";
-				DEVELOPMENT_TEAM = J94G9VA7P2;
-				IBSC_MODULE = votcircleslide;
-				INFOPLIST_FILE = "Target Support Files/votcircleslide/ResourceBundle-votcircleslide-votcircleslide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.cocoapods.votcircleslide;
-				PRODUCT_NAME = votcircleslide;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		C16C15CA41B4E1FFCC98EA6EA98F10CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3549A1023EFE50AE5AB2CEC389AC1471 /* votcircleslide.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/votcircleslide";
-				DEVELOPMENT_TEAM = J94G9VA7P2;
-				IBSC_MODULE = votcircleslide;
-				INFOPLIST_FILE = "Target Support Files/votcircleslide/ResourceBundle-votcircleslide-votcircleslide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.cocoapods.votcircleslide;
-				PRODUCT_NAME = votcircleslide;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -838,7 +478,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -870,23 +509,48 @@
 			};
 			name = Debug;
 		};
+		FB42550C9AE6929AC685C72EE93FAC16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66D046833BE8DA5DCB5AD69CC50AA2E /* Pods-votcircleslide_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		10F50CFE8DAF5A8D4DC8453F4B497903 /* Build configuration list for PBXNativeTarget "votcircleslide-votcircleslide" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACD035CD45810CA12521A2B92B778EF1 /* Debug */,
-				C16C15CA41B4E1FFCC98EA6EA98F10CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3D6D59A3D720EE21090DC40F35F81D7A /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49E6197AEA562BB6D70116948D50F4B2 /* Debug */,
-				2AF179B8CF4CBA2970DCD8E5792D4000 /* Release */,
+				ABDA3D371924B919F917178D1DCD81D6 /* Debug */,
+				2AF326EDDA374F57D1EF081745DE0400 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -894,26 +558,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
-				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C98699E58720D3DB11500E979E78D40E /* Build configuration list for PBXNativeTarget "votcircleslide" */ = {
+		4BEB630DDB9B2927A8D04D8522B51CB2 /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB156838BDB6CA58767B4BAA8F9398E7 /* Debug */,
-				55D90C868D530CC1778752A128D1C453 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E58569E3D8D8760787BE367749FA76DD /* Build configuration list for PBXNativeTarget "Pods-votcircleslide_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				792DF97B6BD56C809492051F3B791A6C /* Debug */,
-				1E1AD9BC25059C21812DB8C9EAEBCA6C /* Release */,
+				FB42550C9AE6929AC685C72EE93FAC16 /* Debug */,
+				33A0C8A0E82BD8358E4D2918D46E56E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

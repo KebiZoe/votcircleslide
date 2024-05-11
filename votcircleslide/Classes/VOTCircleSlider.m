@@ -735,7 +735,7 @@ static const CGFloat k_tolerance = 15;
 UIImage* UIImageLoadWithName(NSString *name){
     NSString *directory = @"votcircleslide.bundle";
     NSBundle *currentBundle = [NSBundle bundleForClass:[VOTCircleSlider class]];
-    UIImage* img = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:[NSString stringWithFormat:@"%@@3x.png",name] ofType:nil inDirectory:directory]];
+    UIImage* img = [UIImage imageWithContentsOfFile:[currentBundle pathForResource:[NSString stringWithFormat:@"%@@3x.png",name] ofType:nil inDirectory:nil]];
     return img;
 }
 @end

@@ -5,7 +5,7 @@ use_frameworks!
 platform :ios, '11.0'
 
 target 'votcircleslide_Example' do
-  pod 'votcircleslide', :path => '../'
+#  pod 'votcircleslide', :path => '../'
 
   target 'votcircleslide_Tests' do
     inherit! :search_paths

@@ -21,6 +21,16 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		844F96072BEF691E00583150 /* VOTCircleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F95FB2BEF691E00583150 /* VOTCircleSlider.m */; };
+		844F96082BEF691E00583150 /* ic_vot_thumb_180D@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F95FD2BEF691E00583150 /* ic_vot_thumb_180D@3x.png */; };
+		844F96092BEF691E00583150 /* ic_vot_car@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F95FE2BEF691E00583150 /* ic_vot_car@3x.png */; };
+		844F960A2BEF691E00583150 /* ic_vot_thumb_swipeLeft@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F95FF2BEF691E00583150 /* ic_vot_thumb_swipeLeft@3x.png */; };
+		844F960C2BEF691E00583150 /* ic_vot_virtualcar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F96012BEF691E00583150 /* ic_vot_virtualcar@3x.png */; };
+		844F960D2BEF691E00583150 /* ic_vot_thumb_goal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F96022BEF691E00583150 /* ic_vot_thumb_goal@3x.png */; };
+		844F960E2BEF691E00583150 /* ic_vot_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F96032BEF691E00583150 /* ic_vot_arrow@3x.png */; };
+		844F960F2BEF691E00583150 /* ic_vot_thumb_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F96042BEF691E00583150 /* ic_vot_thumb_default@3x.png */; };
+		844F96102BEF691E00583150 /* ic_vot_thumb_swipeRight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844F96052BEF691E00583150 /* ic_vot_thumb_swipeRight@3x.png */; };
+		844F96132BEF6A3000583150 /* ZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F96122BEF6A3000583150 /* ZSettingViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BA13766C168145C4BC36C614 /* Pods_votcircleslide_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD50C4BA51D82309E7DD588A /* Pods_votcircleslide_Tests.framework */; };
 		E2E0598AD19DA35F12E57353 /* Pods_votcircleslide_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EDD066582E5B6A0C9C9D4E /* Pods_votcircleslide_Example.framework */; };
@@ -38,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		23D319F540796D19DD21F336 /* Pods-votcircleslide_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Tests.debug.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3FC85DAB299F201100D9CB56 /* votcircleslide */ = {isa = PBXFileReference; lastKnownFileType = folder; name = votcircleslide; path = ../votcircleslide; sourceTree = "<group>"; };
 		3FC85DAD299F23FA00D9CB56 /* ZDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDefine.h; sourceTree = "<group>"; };
 		497B96568471171ADF08F842 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* votcircleslide_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = votcircleslide_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +74,18 @@
 		78746752F0DB4855E3929BC9 /* votcircleslide.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = votcircleslide.podspec; path = ../votcircleslide.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		78BCA84385B8BE72E2FC5E18 /* Pods-votcircleslide_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Example.release.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example.release.xcconfig"; sourceTree = "<group>"; };
 		801C73CCDC4A4ABC834C3C1C /* Pods-votcircleslide_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-votcircleslide_Tests.release.xcconfig"; path = "Target Support Files/Pods-votcircleslide_Tests/Pods-votcircleslide_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		844F95F92BEF691E00583150 /* VOTCircleSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOTCircleSlider.h; sourceTree = "<group>"; };
+		844F95FB2BEF691E00583150 /* VOTCircleSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOTCircleSlider.m; sourceTree = "<group>"; };
+		844F95FD2BEF691E00583150 /* ic_vot_thumb_180D@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_thumb_180D@3x.png"; sourceTree = "<group>"; };
+		844F95FE2BEF691E00583150 /* ic_vot_car@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_car@3x.png"; sourceTree = "<group>"; };
+		844F95FF2BEF691E00583150 /* ic_vot_thumb_swipeLeft@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_thumb_swipeLeft@3x.png"; sourceTree = "<group>"; };
+		844F96012BEF691E00583150 /* ic_vot_virtualcar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_virtualcar@3x.png"; sourceTree = "<group>"; };
+		844F96022BEF691E00583150 /* ic_vot_thumb_goal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_thumb_goal@3x.png"; sourceTree = "<group>"; };
+		844F96032BEF691E00583150 /* ic_vot_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_arrow@3x.png"; sourceTree = "<group>"; };
+		844F96042BEF691E00583150 /* ic_vot_thumb_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_thumb_default@3x.png"; sourceTree = "<group>"; };
+		844F96052BEF691E00583150 /* ic_vot_thumb_swipeRight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vot_thumb_swipeRight@3x.png"; sourceTree = "<group>"; };
+		844F96112BEF6A3000583150 /* ZSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSettingViewController.h; sourceTree = "<group>"; };
+		844F96122BEF6A3000583150 /* ZSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSettingViewController.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA715DC8B057584C9C6BA03E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DD50C4BA51D82309E7DD588A /* Pods_votcircleslide_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_votcircleslide_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				3FC85DAB299F201100D9CB56 /* votcircleslide */,
+				844F95F72BEF691E00583150 /* votcircleslide */,
 				6003F593195388D20070C39A /* Example for votcircleslide */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
@@ -138,6 +159,8 @@
 				6003F59C195388D20070C39A /* ZAppDelegate.h */,
 				6003F59D195388D20070C39A /* ZAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				844F96112BEF6A3000583150 /* ZSettingViewController.h */,
+				844F96122BEF6A3000583150 /* ZSettingViewController.m */,
 				6003F5A5195388D20070C39A /* ZViewController.h */,
 				6003F5A6195388D20070C39A /* ZViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -189,6 +212,40 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		844F95F72BEF691E00583150 /* votcircleslide */ = {
+			isa = PBXGroup;
+			children = (
+				844F95F82BEF691E00583150 /* Classes */,
+				844F95FC2BEF691E00583150 /* Assets */,
+			);
+			name = votcircleslide;
+			path = ../votcircleslide;
+			sourceTree = "<group>";
+		};
+		844F95F82BEF691E00583150 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				844F95F92BEF691E00583150 /* VOTCircleSlider.h */,
+				844F95FB2BEF691E00583150 /* VOTCircleSlider.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		844F95FC2BEF691E00583150 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				844F95FD2BEF691E00583150 /* ic_vot_thumb_180D@3x.png */,
+				844F95FE2BEF691E00583150 /* ic_vot_car@3x.png */,
+				844F95FF2BEF691E00583150 /* ic_vot_thumb_swipeLeft@3x.png */,
+				844F96012BEF691E00583150 /* ic_vot_virtualcar@3x.png */,
+				844F96022BEF691E00583150 /* ic_vot_thumb_goal@3x.png */,
+				844F96032BEF691E00583150 /* ic_vot_arrow@3x.png */,
+				844F96042BEF691E00583150 /* ic_vot_thumb_default@3x.png */,
+				844F96052BEF691E00583150 /* ic_vot_thumb_swipeRight@3x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		CCDBF68E8C2E2F462E8398B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +268,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				2E97B5E85BB90CF40672F1A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,8 +339,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844F960A2BEF691E00583150 /* ic_vot_thumb_swipeLeft@3x.png in Resources */,
+				844F96092BEF691E00583150 /* ic_vot_car@3x.png in Resources */,
+				844F96102BEF691E00583150 /* ic_vot_thumb_swipeRight@3x.png in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				844F960F2BEF691E00583150 /* ic_vot_thumb_default@3x.png in Resources */,
+				844F960E2BEF691E00583150 /* ic_vot_arrow@3x.png in Resources */,
+				844F960C2BEF691E00583150 /* ic_vot_virtualcar@3x.png in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				844F96082BEF691E00583150 /* ic_vot_thumb_180D@3x.png in Resources */,
+				844F960D2BEF691E00583150 /* ic_vot_thumb_goal@3x.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -301,24 +365,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E97B5E85BB90CF40672F1A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/votcircleslide/votcircleslide.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/votcircleslide.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-votcircleslide_Example/Pods-votcircleslide_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8FC971DC0AC0DEB5720F5D6D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,7 +417,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* ZAppDelegate.m in Sources */,
+				844F96132BEF6A3000583150 /* ZSettingViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* ZViewController.m in Sources */,
+				844F96072BEF691E00583150 /* VOTCircleSlider.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,6 @@
 @import UIKit;
 
 @interface ZViewController : UIViewController
-
+@property(nonatomic, assign) CGFloat angle;
+@property(nonatomic, assign) BOOL rigidDirection;
 @end

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fpI-PL-LG6">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="ZViewController" sceneMemberID="viewController">
+                <viewController id="whP-gf-Uak" customClass="ZSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
@@ -20,12 +18,78 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最大旋转角度180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbq-cS-wIL">
+                                <rect key="frame" x="120.5" y="220" width="134.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="180" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="88W-8w-Peh">
+                                <rect key="frame" x="62" y="251" width="251" height="31"/>
+                                <connections>
+                                    <action selector="setAngle:" destination="whP-gf-Uak" eventType="valueChanged" id="3NN-vM-a24"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xM-dk-MUq">
+                                <rect key="frame" x="163" y="397" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl8-YH-ko3">
+                                <rect key="frame" x="97.5" y="488" width="180" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="跳转到环形滑块页面"/>
+                                <connections>
+                                    <action selector="jumptoCircleVC:" destination="whP-gf-Uak" eventType="touchUpInside" id="fOf-40-5np"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="旋转方向严格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-MV-OlX">
+                                <rect key="frame" x="135.5" y="361" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="88W-8w-Peh" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="48" id="4aD-Z7-5AP"/>
+                            <constraint firstItem="88W-8w-Peh" firstAttribute="top" secondItem="Rbq-cS-wIL" secondAttribute="bottom" constant="10" id="DBb-EM-2S0"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Zl8-YH-ko3" secondAttribute="bottom" constant="144" id="Eo3-gO-nvt"/>
+                            <constraint firstItem="88W-8w-Peh" firstAttribute="centerX" secondItem="r7z-MV-OlX" secondAttribute="centerX" id="FXa-6W-CpF"/>
+                            <constraint firstItem="r7z-MV-OlX" firstAttribute="top" secondItem="88W-8w-Peh" secondAttribute="bottom" constant="80" id="GgE-3N-Gmf"/>
+                            <constraint firstItem="2xM-dk-MUq" firstAttribute="centerX" secondItem="Zl8-YH-ko3" secondAttribute="centerX" id="OF2-PT-fdx"/>
+                            <constraint firstItem="Rbq-cS-wIL" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="Z2g-Lp-eeV"/>
+                            <constraint firstItem="2xM-dk-MUq" firstAttribute="top" secondItem="r7z-MV-OlX" secondAttribute="bottom" constant="15" id="Z71-wI-dc9"/>
+                            <constraint firstItem="r7z-MV-OlX" firstAttribute="centerX" secondItem="2xM-dk-MUq" secondAttribute="centerX" id="dLb-5m-O1I"/>
+                            <constraint firstItem="Rbq-cS-wIL" firstAttribute="centerX" secondItem="88W-8w-Peh" secondAttribute="centerX" id="fqT-oX-k3z"/>
+                            <constraint firstItem="Zl8-YH-ko3" firstAttribute="top" secondItem="2xM-dk-MUq" secondAttribute="bottom" constant="60" id="xVo-jn-dFv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TWR-3O-iJM"/>
+                    <connections>
+                        <outlet property="angleLbl" destination="Rbq-cS-wIL" id="SNN-Tr-BEa"/>
+                        <outlet property="slide" destination="88W-8w-Peh" id="Mdo-Ca-sNp"/>
+                        <outlet property="sw" destination="2xM-dk-MUq" id="O0r-a7-yuK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="anW-9S-f1R">
+            <objects>
+                <navigationController id="fpI-PL-LG6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hHo-wm-LOZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="nrA-Ee-LqJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZh-ZM-98U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-569" y="432"/>
         </scene>
     </scenes>
 </document>
